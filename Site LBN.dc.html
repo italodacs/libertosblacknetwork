@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Luciole';src:url('fonts/Luciole-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Luciole';src:url('fonts/Luciole-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0;background:#FFFFFF}
+
+[data-lbn-theme="dark"]{
+  --bg1:#0A0A0A; --bg2:#141311; --bg3:#0A0A0A;
+  --fg:#FFFFFF; --fg2:#CFC9C1; --fg3:#8A8580;
+  --line:#2A2724; --hairline:#201D1A;
+  --card:#141311; --dash:#3A3733;
+  --nav-bg:rgba(10,10,10,0.94);
+  --tile:url('assets/sol-branco.svg'); --tile-op:0.05;
+  --accent:#FF4B0F; --accent-text:#FF4B0F; --on-accent:#0A0A0A;
+}
+[data-lbn-theme="light"]{
+  --bg1:#FFFFFF; --bg2:#F4F1EC; --bg3:#FFFFFF;
+  --fg:#0A0A0A; --fg2:#4A453F; --fg3:#6B655D;
+  --line:#E4DFD7; --hairline:#E4DFD7;
+  --card:#F4F1EC; --dash:#C9C2B7;
+  --nav-bg:rgba(255,255,255,0.94);
+  --tile:url('assets/sol-preto.svg'); --tile-op:0.05;
+  --accent:#FF4B0F; --accent-text:#C43000; --on-accent:#0A0A0A;
+}
+body{background:var(--bg1)}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--fg)}
+[data-lbn-theme="dark"] [data-icon="sun"]{display:none}
+[data-lbn-theme="light"] [data-icon="moon"]{display:none}
+</style>
+</helmet>
+
+<div data-lbn-theme="light" ref="{{ rootRef }}" style="font-family:Luciole,sans-serif;color:var(--fg);background:var(--bg1)">
+
+  <header data-screen-label="Nav" style="position:sticky;top:0;z-index:50;background:var(--nav-bg);border-bottom:1px solid var(--hairline);backdrop-filter:blur(8px)">
+    <div style="max-width:1240px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
+      <a href="#topo" style="display:flex;align-items:center;gap:16px;text-decoration:none">
+        <img src="assets/sol-laranja.svg" alt="" style="width:40px;height:40px;display:block;flex:none">
+        <span style="display:flex;flex-direction:column">
+          <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 115;font-weight:800;font-size:19px;line-height:0.9;letter-spacing:-0.02em;color:var(--fg)">LIBERTOS</span>
+          <span style="margin-top:3px;font-family:Archivo,sans-serif;font-weight:700;font-size:8px;letter-spacing:0.19em;color:var(--accent-text);white-space:nowrap">BLACK NETWORK</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">
+        <a href="#rede" style="color:var(--fg2)">A rede</a>
+        <a href="#encontro" style="color:var(--fg2)">Encontro 2026</a>
+        <a href="#clube" style="color:var(--fg2)">Clube dos Libertos</a>
+        <a href="#empresas" style="color:var(--fg2)">Para empresas</a>
+        <a href="#contato" style="background:var(--accent);color:var(--on-accent);padding:11px 20px;letter-spacing:0.12em">Faça parte</a>
+        <button type="button" onClick="{{ toggleTheme }}" aria-label="Alternar tema claro e escuro" title="Alternar tema" style="width:44px;height:44px;flex:none;padding:0;border:2px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="border-color:var(--accent);color:var(--accent)">
+          <svg data-icon="moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+          <svg data-icon="sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"></path></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section id="topo" data-screen-label="Hero" style="position:relative;background:var(--bg1);color:var(--fg);overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:var(--tile);background-size:150px 150px;opacity:var(--tile-op)"></div>
+    <div style="position:relative;max-width:1240px;margin:0 auto;padding:120px 40px 110px;display:flex;flex-direction:column;gap:56px">
+      <div style="display:flex;align-items:center;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)">
+        <span style="width:44px;height:3px;background:var(--accent);flex:none"></span>
+        <span>Universitários negros do Nordeste &middot; profissionais negros de todo o Brasil</span>
+      </div>
+      <h1 style="margin:0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 110;font-weight:800;font-size:clamp(44px,7vw,104px);line-height:0.96;letter-spacing:-0.035em;text-transform:uppercase;max-width:1050px;text-wrap:balance">A rede que conecta universitários, profissionais e empresas</h1>
+      <div style="display:flex;gap:56px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap">
+        <p style="margin:0;max-width:620px;font-size:21px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Talento existe. O acesso é que precisa ser ampliado. A Libertos Black Network aproxima estudantes negros do Nordeste de quem já está no mercado, em trocas online e no nosso encontro presencial.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap">
+          <a href="#encontro" style="background:var(--accent);color:var(--on-accent);padding:19px 30px;font-family:Archivo,sans-serif;font-weight:800;font-size:15px;letter-spacing:0.1em;text-transform:uppercase">Conheça o Encontro 2026</a>
+          <a href="#contato" style="border:2px solid var(--line);color:var(--fg);padding:17px 30px;font-family:Archivo,sans-serif;font-weight:800;font-size:15px;letter-spacing:0.1em;text-transform:uppercase">Faça parte</a>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative;display:flex">
+      <div style="flex:6;height:14px;background:var(--bg1);border-top:1px solid var(--hairline)"></div>
+      <div style="flex:1.5;height:14px;background:var(--accent)"></div>
+      <div style="flex:2.5;height:14px;background:var(--fg)"></div>
+    </div>
+  </section>
+
+  <section id="rede" data-screen-label="A rede" style="background:var(--bg2);color:var(--fg);padding:110px 40px">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:60px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:60px;align-items:start">
+        <div>
+          <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>01</span><span style="color:var(--fg)">A rede</span></div>
+          <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(34px,4.2vw,54px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Nascemos de um grupo de jovens negros do Nordeste</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <p style="margin:0;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">A Libertos Black Network surgiu inspirada pela <a href="https://www.redeubn.com.br/" target="_blank" rel="noopener" style="color:var(--accent-text);text-decoration:underline;text-underline-offset:3px">Unicamp Black Network</a>, de São Paulo, e movida por uma questão simples: o acesso a oportunidades de todo o Brasil, e a chance de conversar com profissionais experientes.</p>
+          <p style="margin:0;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Hoje somos uma rede que conecta universitários, profissionais e empresas, e que caminha para cobrir o Nordeste inteiro.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--line)">
+        <div style="background:var(--bg2);padding:40px 36px;display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:34px;color:var(--accent)">01</div>
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:26px;line-height:1.1;letter-spacing:-0.02em">Aproximamos você de quem já está lá</div>
+          <div style="font-size:17px;line-height:1.55;color:var(--fg2)">Conversas diretas com profissionais negros que atuam em empresas, escritórios, órgãos públicos e negócios próprios.</div>
+        </div>
+        <div style="background:var(--bg2);padding:40px 36px;display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:34px;color:var(--accent)">02</div>
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:26px;line-height:1.1;letter-spacing:-0.02em">Levamos o Nordeste para a mesa nacional</div>
+          <div style="font-size:17px;line-height:1.55;color:var(--fg2)">Estudantes daqui em contato com oportunidades de todo o Brasil, sem precisar sair da própria região para entender como acessar essas oportunidades.</div>
+        </div>
+        <div style="background:var(--bg2);padding:40px 36px;display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:34px;color:var(--accent)">03</div>
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:26px;line-height:1.1;letter-spacing:-0.02em">Transformamos contato em oportunidade real</div>
+          <div style="font-size:17px;line-height:1.55;color:var(--fg2)">Indicação, divulgação de vagas e relações que continuam depois que a conversa acaba.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="encontro" data-screen-label="O Encontro" style="background:var(--bg1);color:var(--fg);padding:110px 40px;position:relative;overflow:hidden">
+    <div style="position:absolute;right:-180px;top:-180px;width:640px;height:640px;background-image:url('assets/sol-laranja.svg');background-size:100% 100%;opacity:0.12"></div>
+    <div style="position:relative;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:60px">
+      <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>02</span><span style="color:var(--fg)">Encontro 2026</span></div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:60px;align-items:center">
+        <div style="display:flex;flex-direction:column">
+          <div style="display:inline-block;align-self:flex-start;background:var(--accent);color:var(--on-accent);padding:11px 20px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:clamp(22px,2.6vw,34px);line-height:1;letter-spacing:0.13em">ENCONTRO 2026</div>
+          <div style="margin-top:18px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(36px,5.2vw,68px);line-height:0.9;letter-spacing:-0.032em">LIBERTOS<br>BLACK NETWORK</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <p style="margin:0;font-size:22px;line-height:1.55;color:var(--fg);text-wrap:pretty">O dia em que a rede sai da tela e ocupa um mesmo espaço.</p>
+          <p style="margin:0;font-size:19px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Universitários negros de todo o Nordeste e profissionais negros de todo o Brasil, frente a frente: mesas de troca por área de carreira, conversa direta com quem já está no mercado e com empresas que querem conhecer esses talentos.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;background:var(--line)">
+        <div style="background:var(--card);padding:34px 32px;display:flex;align-items:center;gap:22px">
+          <img src="assets/sol-laranja.svg" alt="" style="width:48px;height:48px;display:block;flex:none">
+          <div>
+            <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:30px;letter-spacing:-0.02em;color:var(--fg)">SALVADOR</div>
+            <div style="margin-top:6px;font-family:Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent-text)">1ª edição</div>
+          </div>
+        </div>
+        <div style="background:var(--card);padding:34px 32px;display:flex;align-items:center;gap:22px">
+          <div style="width:48px;height:48px;border:3px dashed var(--dash);border-radius:50%;flex:none"></div>
+          <div>
+            <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:30px;letter-spacing:-0.02em;color:var(--fg3)">2027</div>
+            <div style="margin-top:6px;font-family:Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg3)">outro estado</div>
+          </div>
+        </div>
+        <div style="background:var(--card);padding:34px 32px;display:flex;align-items:center;gap:22px">
+          <div style="width:48px;height:48px;border:3px dashed var(--dash);border-radius:50%;flex:none"></div>
+          <div>
+            <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:30px;letter-spacing:-0.02em;color:var(--fg3)">E SEGUE</div>
+            <div style="margin-top:6px;font-family:Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg3)">nordeste inteiro</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--line);padding-top:36px;display:flex;align-items:center;gap:18px">
+        <img src="assets/sol-laranja.svg" alt="" style="width:34px;height:34px;display:block;flex:none">
+        <div style="font-size:19px;line-height:1.55;color:var(--fg2)">Aqui ficará o link de inscrição em breve.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clube" data-screen-label="Clube dos Libertos" style="background:var(--bg3);color:var(--fg);padding:110px 40px">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:70px;align-items:center">
+      <div style="background:#0A0A0A;padding:60px 48px;display:flex;flex-direction:column;gap:32px">
+        <img src="assets/clube-logo-branco.png" alt="Clube dos Libertos" style="width:min(100%,340px);display:block">
+        <div style="display:flex;align-items:center;gap:14px;padding-top:24px;border-top:1px solid #2A2724">
+          <img src="assets/sol-laranja.svg" alt="" style="width:26px;height:26px;display:block;flex:none">
+          <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:11px;line-height:1.4;letter-spacing:0.15em;text-transform:uppercase;color:#8A8580">Uma iniciativa<br>Libertos Black Network</div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>03</span><span style="color:var(--fg)">De onde viemos</span></div>
+        <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">O Clube dos Libertos segue firme</h2>
+        <p style="margin:28px 0 0;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Tudo começou ali: nosso espaço de letramento racial e aquilombamento, que continua vivo e ativo com a sua própria identidade.</p>
+        <p style="margin:22px 0 0;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">A Libertos Black Network é o passo seguinte: aproximar esses estudantes de profissionais e empresas, e abrir caminhos concretos de carreira.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="empresas" data-screen-label="Para empresas" style="background:#FF4B0F;color:#0A0A0A;padding:110px 40px">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:60px;align-items:end">
+        <div>
+          <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase"><span>04</span><span>Para empresas</span></div>
+          <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(34px,4.4vw,56px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Diversidade que começa antes da vaga abrir</h2>
+        </div>
+        <p style="margin:0;font-size:20px;line-height:1.6;text-wrap:pretty">Empresas que querem conhecer talentos negros do Nordeste encontram aqui uma base real de estudantes e profissionais, e um espaço para se apresentar antes do processo seletivo.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2px;background:#0A0A0A">
+        <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
+          <img src="assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Patrocínio do Encontro</div>
+          <div style="font-size:16px;line-height:1.55">Presença de marca no principal encontro de carreira negra do Nordeste.</div>
+        </div>
+        <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
+          <img src="assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Mesa com profissionais</div>
+          <div style="font-size:16px;line-height:1.55">Seus times conversando diretamente com estudantes por área de carreira.</div>
+        </div>
+        <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
+          <img src="assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Divulgação de vagas</div>
+          <div style="font-size:16px;line-height:1.55">Oportunidades circulando dentro da rede, para quem já está em contato com ela.</div>
+        </div>
+        <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
+          <img src="assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Métricas ESG mensuráveis</div>
+          <div style="font-size:16px;line-height:1.55">Dados concretos de alcance e engajamento para relatar no pilar social da sua companhia.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" data-screen-label="Contato" style="background:var(--bg1);color:var(--fg);padding:110px 40px;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:var(--tile);background-size:170px 170px;opacity:0.04"></div>
+    <div style="position:relative;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:70px;align-items:start">
+      <div>
+        <h2 style="margin:0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(40px,6vw,76px);line-height:0.96;letter-spacing:-0.035em;text-transform:uppercase;text-wrap:balance">Ninguém entra sozinho na sala</h2>
+        <p style="margin:32px 0 0;max-width:520px;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Se você quer viver a universidade indo além da sala de aula, esse espaço também é seu.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px;background:var(--line)">
+        <a href="https://forms.gle/o7Xz1uMxWEaXUTqD9" target="_blank" rel="noopener" style="background:var(--card);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;text-decoration:none">
+          <span style="display:flex;flex-direction:column;gap:7px">
+            <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:24px;letter-spacing:-0.02em;color:var(--fg)">Sou universitário</span>
+            <span style="font-size:16px;line-height:1.5;color:var(--fg3)">Entre na rede e participe das trocas</span>
+          </span>
+          <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:26px;color:var(--accent);flex:none">&rarr;</span>
+        </a>
+        <a href="https://forms.gle/HBGDYFMSejqq1oXt9" target="_blank" rel="noopener" style="background:var(--card);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;text-decoration:none">
+          <span style="display:flex;flex-direction:column;gap:7px">
+            <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:24px;letter-spacing:-0.02em;color:var(--fg)">Sou profissional</span>
+            <span style="font-size:16px;line-height:1.5;color:var(--fg3)">Compartilhe seu caminho com quem está começando</span>
+          </span>
+          <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:26px;color:var(--accent);flex:none">&rarr;</span>
+        </a>
+        <button type="button" onClick="{{ openModal }}" style="background:var(--card);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;text-align:left;border:0;width:100%;cursor:pointer;font-family:inherit">
+          <span style="display:flex;flex-direction:column;gap:7px">
+            <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:24px;letter-spacing:-0.02em;color:var(--fg)">Represento uma empresa</span>
+            <span style="font-size:16px;line-height:1.5;color:var(--fg3)">Fale com a gente sobre parceria e patrocínio</span>
+          </span>
+          <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:26px;color:var(--accent);flex:none">&rarr;</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer data-screen-label="Rodapé" style="background:var(--bg1);color:var(--fg);border-top:1px solid var(--hairline);padding:56px 40px">
+    <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:18px">
+        <img src="assets/sol-laranja.svg" alt="" style="width:46px;height:46px;display:block;flex:none">
+        <div style="display:flex;flex-direction:column">
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 115;font-weight:800;font-size:21px;line-height:0.9;letter-spacing:-0.02em">LIBERTOS</div>
+          <div style="margin-top:4px;font-family:Archivo,sans-serif;font-weight:700;font-size:9px;letter-spacing:0.19em;color:var(--accent-text);white-space:nowrap">BLACK NETWORK</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:28px;flex-wrap:wrap;font-family:Archivo,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.16em;text-transform:uppercase">
+        <a href="https://www.instagram.com/libertosblacknetwork/" target="_blank" rel="noopener" style="color:var(--fg2)">Instagram</a>
+        <a href="https://www.linkedin.com/company/libertos-black-network/" target="_blank" rel="noopener" style="color:var(--fg2)">LinkedIn</a>
+        <a href="mailto:libertosblacknetwork@gmail.com" style="color:var(--fg2)">libertosblacknetwork@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:100;background:rgba(10,10,10,0.72);display:flex;align-items:center;justify-content:center;padding:32px">
+      <div onClick="{{ stopClose }}" role="dialog" aria-modal="true" style="background:var(--bg1);border:2px solid var(--accent);max-width:520px;width:100%;padding:48px 44px;display:flex;flex-direction:column;gap:24px;position:relative">
+        <button type="button" onClick="{{ closeModal }}" aria-label="Fechar" style="position:absolute;top:14px;right:14px;width:36px;height:36px;padding:0;border:0;background:transparent;color:var(--fg3);font-size:26px;line-height:1;cursor:pointer;font-family:inherit">&times;</button>
+        <img src="assets/sol-laranja.svg" alt="" style="width:52px;height:52px;display:block">
+        <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:32px;line-height:1.05;letter-spacing:-0.025em;color:var(--fg);text-wrap:balance">Ficamos muito felizes com o seu interesse</div>
+        <p style="margin:0;font-size:18px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Entre em contato pelo nosso e-mail e respondemos rapidamente.</p>
+        <a href="mailto:libertosblacknetwork@gmail.com" style="background:var(--accent);color:var(--on-accent);padding:18px 24px;font-family:Archivo,sans-serif;font-weight:800;font-size:16px;letter-spacing:0.02em;text-align:center;word-break:break-word">libertosblacknetwork@gmail.com</a>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.root = React.createRef();
+    this.state = { modalOpen: false };
+  }
+  applyTheme(theme) {
+    const el = this.root.current;
+    if (el) el.setAttribute('data-lbn-theme', theme);
+    document.documentElement.style.background = theme === 'light' ? '#FFFFFF' : '#0A0A0A';
+  }
+  componentDidMount() {
+    let saved = null;
+    try { saved = localStorage.getItem('lbn-site-theme'); } catch (e) {}
+    this.applyTheme(saved === 'dark' ? 'dark' : 'light');
+  }
+  renderVals() {
+    return {
+      rootRef: this.root,
+      modalOpen: !!this.state.modalOpen,
+      openModal: () => this.setState({ modalOpen: true }),
+      closeModal: () => this.setState({ modalOpen: false }),
+      stopClose: (e) => e.stopPropagation(),
+      toggleTheme: () => {
+        const el = this.root.current;
+        const next = el && el.getAttribute('data-lbn-theme') === 'light' ? 'dark' : 'light';
+        this.applyTheme(next);
+        try { localStorage.setItem('lbn-site-theme', next); } catch (e) {}
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

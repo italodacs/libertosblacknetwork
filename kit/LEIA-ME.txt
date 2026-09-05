@@ -1,0 +1,41 @@
+LIBERTOS BLACK NETWORK — KIT DE MARCA
+Proposta de rebranding · 2026
+
+CONTEÚDO
+01 Simbolo/        Sol Liberto — SVG (vetor de trabalho) e PNG 2000px, nas 3 cores institucionais.
+02 Logotipo/       Assinaturas horizontais, verticais, selo LBN e bloco do Encontro. PNG em 4x (fundo transparente onde aplicável).
+03 Malha de Sol/   Padronagem. SVG = 1 módulo (200x200, tileável). PNG = 12x12 módulos, 2400px.
+04 Tipografia/     Luciole (arquivos .ttf) + instruções da display.
+05 Apresentacao/   Board de marca em 3 formatos:
+                   - .pptx (11 slides, editável no PowerPoint / Google Slides / Keynote)
+                   - .html do board completo (abre no navegador, funciona offline)
+                   - .html dos slides (abre no navegador; use Cmd/Ctrl+P > Salvar como PDF
+                     para gerar o PDF, uma página por slide)
+06 Posts Instagram/ Os dois carrosséis em PNG 1080x1350 (formato de feed 4:5),
+                   5 cards cada, na ordem de publicação.
+
+CORES
+Preto Liberto   #0A0A0A   C0 M0 Y0 K96
+Laranja Rede    #FF4B0F   C0 M79 Y95 K0
+Branco          #FFFFFF
+Areia (apoio)   #F4F1EC
+Proporção de uso: 60 preto / 15 laranja / 25 branco.
+
+TIPOGRAFIA
+Display  Archivo Expanded — pesos 600, 700, 800
+         Download gratuito: https://fonts.google.com/specimen/Archivo
+         Instale a família variável e use o eixo de largura (wdth) em 112–118.
+Texto    Luciole — Regular, Italic e Bold (arquivos nesta pasta)
+         Origem: https://luciole-vision.com
+
+RECONSTRUIR O LOGOTIPO EM VETOR (Illustrator / Figma)
+1. Instale Archivo (variável) e defina wdth 118, peso 800.
+2. "LIBERTOS" em caixa alta, entrelinha 0.82, tracking -30 (-0.03em).
+3. Régua laranja #FF4B0F com espessura = 1/15 da altura da caixa de "LIBERTOS", logo abaixo, com a largura exata do texto.
+4. "BLACK NETWORK" em caixa alta, Archivo wdth 105, peso 700, tracking +190 (0.19em), corpo = 26% do corpo de "LIBERTOS".
+5. Símbolo à esquerda, altura = 1.7x a altura da caixa de "LIBERTOS"; folga entre símbolo e texto = 1/2 da altura do símbolo.
+6. Converta o texto em curvas (Criar contornos) antes de entregar para gráfica.
+
+O SÍMBOLO
+Anel central (o coletivo) + 12 raios idênticos, rotação constante de 30° (as conexões).
+Redução mínima: 20px de altura em tela, 8mm em impressão.

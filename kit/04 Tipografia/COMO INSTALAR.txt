@@ -1,0 +1,23 @@
+TIPOGRAFIA — LIBERTOS BLACK NETWORK
+
+1) LUCIOLE — tipografia de texto (arquivos nesta pasta)
+   Luciole-Regular.ttf
+   Luciole-Bold.ttf
+   Luciole-Regular-Italic.ttf
+   Instale com duplo clique (Windows/macOS) ou envie o .ttf direto no upload
+   de fontes do Canva / Figma / Photoshop.
+   Origem: https://luciole-vision.com — licença livre.
+
+2) ARCHIVO — tipografia display (títulos e logotipo)
+   Não pode ser distribuída neste kit, mas é gratuita:
+   https://fonts.google.com/specimen/Archivo
+   Baixe a família VARIÁVEL ("Get font" > "Download all") e instale
+   Archivo-VariableFont_wdth,wght.ttf.
+   Ajustes usados na marca:
+     eixo de largura (wdth): 112 a 118
+     pesos: 600, 700 e 800
+   No Canva, procure "Archivo" — já está disponível na biblioteca.
+
+PESOS EM USO
+   Display   Archivo 800 (logotipo e títulos), 700 (subtítulos), 600 (rótulos)
+   Texto     Luciole 400 / 400 itálico / 700

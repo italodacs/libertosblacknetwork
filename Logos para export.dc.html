@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Luciole';src:url('fonts/Luciole-Regular.ttf') format('truetype');font-weight:400;font-display:block}
+@font-face{font-family:'Luciole';src:url('fonts/Luciole-Bold.ttf') format('truetype');font-weight:700;font-display:block}
+html,body{margin:0;background:#7A7A7A}
+</style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#0A0A0A"/><circle cx="100" cy="100" r="34" fill="none" stroke="#FF4B0F" stroke-width="16"/><circle cx="100" cy="100" r="8" fill="#FF4B0F"/><g fill="#FF4B0F"><rect x="93" y="26" width="14" height="26"/><rect x="93" y="148" width="14" height="26"/><rect x="26" y="93" width="26" height="14"/><rect x="148" y="93" width="26" height="14"/></g></svg></template>
+</helmet>
+
+<div style="display:flex;flex-direction:column;gap:40px;padding:40px;font-family:Luciole,sans-serif">
+
+  <div id="lock-h-preto" data-document-role="page" data-label="Horizontal — preto" style="background:#FFFFFF;padding:80px;display:flex;align-items:center;gap:44px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:150px;height:150px;display:block;flex:none">
+    <div style="display:flex;flex-direction:column">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:86px;line-height:0.82;letter-spacing:-0.03em;color:#0A0A0A;white-space:nowrap">LIBERTOS</div>
+      <div style="margin-top:16px;border-top:5px solid #FF4B0F;padding-top:11px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 105;font-weight:700;font-size:22.5px;letter-spacing:0.19em;color:#0A0A0A;white-space:nowrap">BLACK NETWORK</div>
+    </div>
+  </div>
+
+  <div id="lock-h-branco" data-document-role="page" data-label="Horizontal — branco" style="background:#0A0A0A;padding:80px;display:flex;align-items:center;gap:44px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:150px;height:150px;display:block;flex:none">
+    <div style="display:flex;flex-direction:column">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:86px;line-height:0.82;letter-spacing:-0.03em;color:#FFFFFF;white-space:nowrap">LIBERTOS</div>
+      <div style="margin-top:16px;border-top:5px solid #FF4B0F;padding-top:11px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 105;font-weight:700;font-size:22.5px;letter-spacing:0.19em;color:#FFFFFF;white-space:nowrap">BLACK NETWORK</div>
+    </div>
+  </div>
+
+  <div id="lock-h-laranja" data-document-role="page" data-label="Horizontal — laranja" style="background:#0A0A0A;padding:80px;display:flex;align-items:center;gap:44px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:150px;height:150px;display:block;flex:none">
+    <div style="display:flex;flex-direction:column">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:86px;line-height:0.82;letter-spacing:-0.03em;color:#FF4B0F;white-space:nowrap">LIBERTOS</div>
+      <div style="margin-top:16px;border-top:5px solid #FF4B0F;padding-top:11px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 105;font-weight:700;font-size:22.5px;letter-spacing:0.19em;color:#FF4B0F;white-space:nowrap">BLACK NETWORK</div>
+    </div>
+  </div>
+
+  <div id="lock-h-mono" data-document-role="page" data-label="Horizontal — monocromático" style="background:#FFFFFF;padding:80px;display:flex;align-items:center;gap:44px;width:max-content">
+    <img src="assets/sol-preto.svg" alt="" style="width:150px;height:150px;display:block;flex:none">
+    <div style="display:flex;flex-direction:column">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:86px;line-height:0.82;letter-spacing:-0.03em;color:#0A0A0A;white-space:nowrap">LIBERTOS</div>
+      <div style="margin-top:16px;border-top:5px solid #0A0A0A;padding-top:11px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 105;font-weight:700;font-size:22.5px;letter-spacing:0.19em;color:#0A0A0A;white-space:nowrap">BLACK NETWORK</div>
+    </div>
+  </div>
+
+  <div id="lock-v-preto" data-document-role="page" data-label="Vertical — preto" style="background:#FFFFFF;padding:80px;display:flex;flex-direction:column;align-items:center;gap:34px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:150px;height:150px;display:block">
+    <div style="display:flex;flex-direction:column;align-items:center">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:66px;line-height:0.82;letter-spacing:-0.03em;color:#0A0A0A;white-space:nowrap">LIBERTOS</div>
+      <div style="margin-top:14px;border-top:4px solid #FF4B0F;padding-top:9px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 105;font-weight:700;font-size:18.5px;letter-spacing:0.19em;color:#0A0A0A;white-space:nowrap">BLACK NETWORK</div>
+    </div>
+  </div>
+
+  <div id="lock-v-branco" data-document-role="page" data-label="Vertical — branco" style="background:#0A0A0A;padding:80px;display:flex;flex-direction:column;align-items:center;gap:34px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:150px;height:150px;display:block">
+    <div style="display:flex;flex-direction:column;align-items:center">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:66px;line-height:0.82;letter-spacing:-0.03em;color:#FFFFFF;white-space:nowrap">LIBERTOS</div>
+      <div style="margin-top:14px;border-top:4px solid #FF4B0F;padding-top:9px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 105;font-weight:700;font-size:18.5px;letter-spacing:0.19em;color:#FFFFFF;white-space:nowrap">BLACK NETWORK</div>
+    </div>
+  </div>
+
+  <div id="selo-lbn" data-document-role="page" data-label="Selo LBN" style="background:#0A0A0A;padding:60px;display:flex;gap:40px;width:max-content">
+    <div style="width:260px;height:260px;border-radius:50%;background:#FF4B0F;display:flex;align-items:center;justify-content:center">
+      <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:78px;letter-spacing:-0.02em;color:#0A0A0A">LBN</span>
+    </div>
+    <div style="width:260px;height:260px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center">
+      <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:78px;letter-spacing:-0.02em;color:#0A0A0A">LBN</span>
+    </div>
+  </div>
+
+  <div id="encontro-block" data-document-role="page" data-label="Bloco Encontro" style="background:#0A0A0A;padding:80px;display:flex;align-items:center;gap:56px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:130px;height:130px;display:block;flex:none">
+    <div style="display:flex;flex-direction:column">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:44px;line-height:1;letter-spacing:0.13em;color:#FF4B0F;white-space:nowrap">ENCONTRO</div>
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 115;font-weight:800;font-size:62px;line-height:0.92;letter-spacing:-0.025em;margin-top:8px;color:#FFFFFF;white-space:nowrap">LIBERTOS<br>BLACK NETWORK</div>
+    </div>
+    <div style="flex:none;width:3px;height:165px;background:#2A2724"></div>
+    <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:84px;letter-spacing:-0.02em;color:#FFFFFF">2026</div>
+  </div>
+
+  <div id="lbn-sol-horizontal-preto" data-document-role="page" data-label="Sol + LBN horizontal — preto" style="background:#FFFFFF;padding:80px;display:flex;align-items:center;gap:38px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:180px;height:180px;display:block;flex:none">
+    <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:150px;line-height:0.78;letter-spacing:-0.035em;color:#0A0A0A">LBN</div>
+  </div>
+
+  <div id="lbn-sol-horizontal-branco" data-document-role="page" data-label="Sol + LBN horizontal — branco" style="background:#0A0A0A;padding:80px;display:flex;align-items:center;gap:38px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:180px;height:180px;display:block;flex:none">
+    <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:150px;line-height:0.78;letter-spacing:-0.035em;color:#FFFFFF">LBN</div>
+  </div>
+
+  <div id="lbn-sol-vertical-preto" data-document-role="page" data-label="Sol + LBN vertical — preto" style="background:#FFFFFF;padding:80px;display:flex;flex-direction:column;align-items:center;gap:30px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:170px;height:170px;display:block">
+    <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:126px;line-height:0.78;letter-spacing:-0.035em;color:#0A0A0A">LBN</div>
+  </div>
+
+  <div id="lbn-sol-vertical-branco" data-document-role="page" data-label="Sol + LBN vertical — branco" style="background:#0A0A0A;padding:80px;display:flex;flex-direction:column;align-items:center;gap:30px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:170px;height:170px;display:block">
+    <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:126px;line-height:0.78;letter-spacing:-0.035em;color:#FFFFFF">LBN</div>
+  </div>
+
+  <div id="lbn-sol-assinado" data-document-role="page" data-label="Sol + LBN assinado" style="background:#0A0A0A;padding:80px;display:flex;align-items:center;gap:38px;width:max-content">
+    <img src="assets/sol-laranja.svg" alt="" style="width:170px;height:170px;display:block;flex:none">
+    <div style="display:flex;flex-direction:column">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:140px;line-height:0.78;letter-spacing:-0.035em;color:#FFFFFF">LBN</div>
+      <div style="margin-top:18px;border-top:5px solid #FF4B0F;padding-top:12px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 105;font-weight:700;font-size:21px;letter-spacing:0.185em;color:#FFFFFF;white-space:nowrap">LIBERTOS BLACK NETWORK</div>
+    </div>
+  </div>
+
+  <div id="lbn-sol-selo" data-document-role="page" data-label="Sol + LBN selos" style="background:#FFFFFF;padding:60px;display:flex;gap:40px;width:max-content">
+    <div style="width:300px;height:300px;background:#0A0A0A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px">
+      <img src="assets/sol-laranja.svg" alt="" style="width:100px;height:100px;display:block">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:80px;line-height:0.78;letter-spacing:-0.035em;color:#FFFFFF">LBN</div>
+    </div>
+    <div style="width:300px;height:300px;background:#FF4B0F;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px">
+      <img src="assets/sol-preto.svg" alt="" style="width:100px;height:100px;display:block">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:80px;line-height:0.78;letter-spacing:-0.035em;color:#0A0A0A">LBN</div>
+    </div>
+    <div style="width:300px;height:300px;border-radius:50%;background:#0A0A0A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+      <img src="assets/sol-laranja.svg" alt="" style="width:84px;height:84px;display:block">
+      <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:66px;line-height:0.78;letter-spacing:-0.035em;color:#FFFFFF">LBN</div>
+    </div>
+  </div>
+
+  <div id="assinatura-conjunta" data-document-role="page" data-label="Assinatura conjunta" style="background:#FFFFFF;padding:70px;display:flex;align-items:center;gap:46px;width:max-content">
+    <img src="assets/clube-logo-preto.png" alt="Clube dos Libertos" style="width:340px;display:block">
+    <div style="width:2px;height:86px;background:#E4DFD7"></div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <img src="assets/sol-laranja.svg" alt="" style="width:56px;height:56px;display:block">
+      <div style="display:flex;flex-direction:column">
+        <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:25px;line-height:0.9;letter-spacing:-0.01em;color:#0A0A0A;white-space:nowrap">LIBERTOS</div>
+        <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:11.5px;letter-spacing:0.19em;color:#FF4B0F;margin-top:4px;white-space:nowrap">BLACK NETWORK</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>
