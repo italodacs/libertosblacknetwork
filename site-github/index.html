@@ -11,7 +11,6 @@
 <link rel="icon" type="image/svg+xml" href="assets/sol-laranja.svg">
 <style>
 [data-icon]{pointer-events:none}
-button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;color:var(--accent)!important}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,31 +44,73 @@ a{color:var(--accent);text-decoration:none}
 a:hover{color:var(--fg)}
 [data-lbn-theme="dark"] [data-icon="sun"]{display:none}
 [data-lbn-theme="light"] [data-icon="moon"]{display:none}
+
+/* Menu superior: uma linha só no desktop, painel recolhível abaixo de 1180px */
+html{scroll-padding-top:88px}
+.lbn-header{position:sticky;top:0;z-index:50;background:var(--nav-bg);border-bottom:1px solid var(--hairline);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.lbn-header-inner{max-width:1240px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:28px;box-sizing:border-box}
+.lbn-brand{display:flex;align-items:center;gap:16px;text-decoration:none;flex:none;margin-right:auto}
+.lbn-menu{display:flex;align-items:center;gap:26px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.1em;text-transform:uppercase}
+.lbn-menu a{color:var(--fg2);white-space:nowrap}
+.lbn-menu a:hover{color:var(--accent-text)}
+.lbn-actions{display:flex;align-items:center;gap:12px;flex:none}
+.lbn-cta{background:var(--accent);color:var(--on-accent)!important;padding:13px 20px;font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;line-height:1}
+.lbn-cta:hover{background:var(--fg);color:var(--bg1)!important}
+.lbn-cta-menu{display:none}
+.lbn-icon-btn{width:44px;height:44px;flex:none;padding:0;border:2px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+.lbn-icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lbn-burger{display:none}
+.lbn-burger [data-icon="close"]{display:none}
+.lbn-header.is-open .lbn-burger [data-icon="menu"]{display:none}
+.lbn-header.is-open .lbn-burger [data-icon="close"]{display:block}
+
+@media (max-width:1179px){
+  .lbn-burger{display:flex}
+  .lbn-menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:8px 40px 24px;background:var(--bg1);border-bottom:1px solid var(--hairline);box-shadow:0 18px 30px rgba(0,0,0,0.12);max-height:calc(100vh - 73px);max-height:calc(100dvh - 73px);overflow-y:auto;box-sizing:border-box;font-size:15px}
+  .lbn-header.is-open .lbn-menu{display:flex}
+  .lbn-menu a{padding:16px 0;border-bottom:1px solid var(--hairline)}
+}
+@media (max-width:560px){
+  html{scroll-padding-top:80px}
+  .lbn-header-inner{padding:12px 16px;gap:12px}
+  .lbn-brand{gap:12px}
+  .lbn-menu{padding:4px 16px 20px;max-height:calc(100vh - 69px);max-height:calc(100dvh - 69px)}
+  .lbn-cta-bar{display:none}
+  .lbn-cta-menu{display:block;margin-top:20px;padding:18px 20px;text-align:center;border-bottom:0!important;font-size:15px}
+}
 </style>
 </head>
 <body>
 <div data-lbn-theme="light" id="lbn-root" style="font-family:Luciole,sans-serif;color:var(--fg);background:var(--bg1)">
 
-  <header data-screen-label="Nav" style="position:sticky;top:0;z-index:50;background:var(--nav-bg);border-bottom:1px solid var(--hairline);backdrop-filter:blur(8px)">
-    <div style="max-width:1240px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
-      <a href="#topo" style="display:flex;align-items:center;gap:16px;text-decoration:none">
+  <header class="lbn-header" data-screen-label="Nav">
+    <div class="lbn-header-inner">
+      <a href="#topo" class="lbn-brand">
         <img src="assets/sol-laranja.svg" alt="" style="width:40px;height:40px;display:block;flex:none">
         <span style="display:flex;flex-direction:column">
           <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 115;font-weight:800;font-size:19px;line-height:0.9;letter-spacing:-0.02em;color:var(--fg)">LIBERTOS</span>
           <span style="margin-top:3px;font-family:Archivo,sans-serif;font-weight:700;font-size:8px;letter-spacing:0.19em;color:var(--accent-text);white-space:nowrap">BLACK NETWORK</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">
-        <a href="#rede" style="color:var(--fg2)">A rede</a>
-        <a href="#encontro" style="color:var(--fg2)">Encontro 2026</a>
-        <a href="#clube" style="color:var(--fg2)">Clube dos Libertos</a>
-        <a href="#empresas" style="color:var(--fg2)">Para empresas</a>
-        <a href="#contato" style="background:var(--accent);color:var(--on-accent);padding:11px 20px;letter-spacing:0.12em">Faça parte</a>
-        <button type="button" onclick="lbnToggleTheme()" aria-label="Alternar tema claro e escuro" title="Alternar tema" style="width:44px;height:44px;flex:none;padding:0;border:2px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;display:flex;align-items:center;justify-content:center" >
+      <nav id="lbn-menu" class="lbn-menu" aria-label="Seções do site">
+        <a href="#rede">A rede</a>
+        <a href="#trajetoria">Trajetória</a>
+        <a href="#encontro">Encontro 2026</a>
+        <a href="#clube">Clube dos Libertos</a>
+        <a href="#empresas">Para empresas</a>
+        <a href="#contato" class="lbn-cta lbn-cta-menu">Faça parte</a>
+      </nav>
+      <div class="lbn-actions">
+        <a href="#contato" class="lbn-cta lbn-cta-bar">Faça parte</a>
+        <button type="button" class="lbn-icon-btn" onclick="lbnToggleTheme()" aria-label="Alternar tema claro e escuro" title="Alternar tema">
           <svg data-icon="moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
           <svg data-icon="sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"></path></svg>
         </button>
-      </nav>
+        <button type="button" class="lbn-icon-btn lbn-burger" onclick="lbnToggleMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="lbn-menu">
+          <svg data-icon="menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+          <svg data-icon="close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -129,10 +170,140 @@ a:hover{color:var(--fg)}
     </div>
   </section>
 
+  <section id="trajetoria" data-screen-label="Trajetória" style="background:var(--bg3);color:var(--fg);padding:110px 40px;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:var(--tile);background-size:150px 150px;opacity:var(--tile-op)"></div>
+    <div style="position:relative;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:64px">
+      <div>
+        <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>02</span><span style="color:var(--fg)">Ações e impacto</span></div>
+        <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(34px,4.2vw,54px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Nossa trajetória até aqui</h2>
+      </div>
+      <div style="position:relative;max-width:900px;padding-left:64px">
+        <div style="position:absolute;left:24px;top:20px;bottom:0;width:3px;background:var(--accent)"></div>
+        <div style="position:relative;display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:0 0 10px">
+          <div style="margin-left:-64px;background:var(--accent);color:var(--on-accent);padding:10px 18px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:34px;line-height:1;letter-spacing:-0.02em">2025</div>
+          <div style="font-size:15px;color:var(--fg2)">~465 pessoas &middot; 554 inscrições &middot; 16 ações</div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Fev/25</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Grupo de Estudos Aquilombar &amp; Existir</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Mai/25</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Treinamento técnico em Power BI</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Mai–Jun/25</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Grupos de estudo: Carolina Maria de Jesus, Maria Firmina dos Reis, bell hooks e Imagens de Controle</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Jun/25</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Formação Êko: Geração de Vozes Negras, 1ª edição</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Jul/25</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Slam de Mulheres Negras e Formação Êko, 2ª edição</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Ago–Nov/25</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Trilha Óri: Construção de Caminhos, duas edições</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Set–Nov/25</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Sessões virtuais Aquilombar &amp; Existir</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:36px 0 10px">
+          <div style="margin-left:-64px;background:var(--accent);color:var(--on-accent);padding:10px 18px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:34px;line-height:1;letter-spacing:-0.02em">2026</div>
+          <div style="font-size:15px;color:var(--fg2)">~198 pessoas &middot; 230+ inscrições &middot; 6 ações</div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Mar/26</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Aquilombar &amp; Existir, com expansão para UFRGS e UFRN</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Abr–Mai/26</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Aquilombar &amp; Existir: permanência e trajetórias no ensino superior</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Jun/26</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Ciclo de leitura Em Travessias</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Jun/26</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">First Step: Tecnologia, workshop de IA e carreira</div>
+          </div>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:0;padding:14px 0">
+          <div style="position:absolute;left:-45.5px;top:25px;width:14px;height:14px;background:var(--bg3);border:3px solid var(--accent);border-radius:50%;box-sizing:border-box"></div>
+          <div style="flex:none;width:40px;height:2px;background:var(--accent);margin-top:31px;margin-left:-31.5px;opacity:0.6"></div>
+          <div style="flex:1;min-width:0;padding:14px 22px;background:var(--card);border:1px solid var(--line);display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-text);padding-top:3px">Ago/26</div>
+            <div style="font-size:17px;line-height:1.5;color:var(--fg)">Aquilombar &amp; Existir, com UNILAB, UFBA, UFAL e IFRN</div>
+          </div>
+        </div>
+        <div style="position:relative;padding-top:40px">
+          <img src="assets/sol-laranja.svg" alt="" style="position:absolute;left:-64px;top:16px;width:52px;height:52px;display:block;background:var(--bg3)">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--line);max-width:900px">
+        <div style="background:var(--accent);color:var(--on-accent);padding:34px 34px">
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(56px,7vw,96px);line-height:0.9;letter-spacing:-0.04em">~663</div>
+          <div style="margin-top:12px;font-size:18px">pessoas únicas alcançadas</div>
+        </div>
+        <div style="background:var(--card);padding:34px 34px">
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(56px,7vw,96px);line-height:0.9;letter-spacing:-0.04em;color:var(--fg)">22</div>
+          <div style="margin-top:12px;font-size:18px;color:var(--fg2)">ações realizadas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="encontro" data-screen-label="O Encontro" style="background:var(--bg1);color:var(--fg);padding:110px 40px;position:relative;overflow:hidden">
     <div style="position:absolute;right:-180px;top:-180px;width:640px;height:640px;background-image:url('assets/sol-laranja.svg');background-size:100% 100%;opacity:0.12"></div>
     <div style="position:relative;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:60px">
-      <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>02</span><span style="color:var(--fg)">Encontro 2026</span></div>
+      <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>03</span><span style="color:var(--fg)">Encontro 2026</span></div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:60px;align-items:center">
         <div style="display:flex;flex-direction:column">
@@ -186,7 +357,7 @@ a:hover{color:var(--fg)}
         </div>
       </div>
       <div>
-        <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>03</span><span style="color:var(--fg)">De onde viemos</span></div>
+        <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>04</span><span style="color:var(--fg)">De onde viemos</span></div>
         <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">O Clube dos Libertos segue firme</h2>
         <p style="margin:28px 0 0;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Tudo começou ali: nosso espaço de letramento racial e aquilombamento, que continua vivo e ativo com a sua própria identidade.</p>
         <p style="margin:22px 0 0;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">A Libertos Black Network é o passo seguinte: aproximar esses estudantes de profissionais e empresas, e abrir caminhos concretos de carreira.</p>
@@ -278,7 +449,7 @@ a:hover{color:var(--fg)}
     </div>
   </footer>
 
-<div id="lbn-modal" onclick="lbnCloseModal()" style="position:fixed;inset:0;z-index:100;background:rgba(10,10,10,0.72);display:none;align-items:center;justify-content:center;padding:32px">
+  <div id="lbn-modal" onclick="lbnCloseModal()" style="position:fixed;inset:0;z-index:100;background:rgba(10,10,10,0.72);display:none;align-items:center;justify-content:center;padding:32px">
       <div onclick="event.stopPropagation()" role="dialog" aria-modal="true" style="background:var(--bg1);border:2px solid var(--accent);max-width:520px;width:100%;padding:48px 44px;display:flex;flex-direction:column;gap:24px;position:relative">
         <button type="button" onclick="lbnCloseModal()" aria-label="Fechar" style="position:absolute;top:14px;right:14px;width:36px;height:36px;padding:0;border:0;background:transparent;color:var(--fg3);font-size:26px;line-height:1;cursor:pointer;font-family:inherit">&times;</button>
         <img src="assets/sol-laranja.svg" alt="" style="width:52px;height:52px;display:block">
@@ -305,7 +476,18 @@ a:hover{color:var(--fg)}
   };
   window.lbnOpenModal=function(){document.getElementById('lbn-modal').style.display='flex';};
   window.lbnCloseModal=function(){document.getElementById('lbn-modal').style.display='none';};
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.lbnCloseModal();});
+  var header=document.querySelector('.lbn-header');
+  var burger=header.querySelector('.lbn-burger');
+  function setMenu(open){
+    header.classList.toggle('is-open',open);
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+  }
+  window.lbnToggleMenu=function(){setMenu(!header.classList.contains('is-open'));};
+  document.getElementById('lbn-menu').addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false);});
+  document.addEventListener('click',function(e){if(!header.contains(e.target))setMenu(false);});
+  window.matchMedia('(min-width:1180px)').addEventListener('change',function(m){if(m.matches)setMenu(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){window.lbnCloseModal();setMenu(false);}});
   var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
   apply(saved==='dark'?'dark':'light');
 })();
