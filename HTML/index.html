@@ -8,14 +8,13 @@
 <meta property="og:title" content="Libertos Black Network">
 <meta property="og:description" content="A rede que conecta universitários, profissionais e empresas.">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/svg+xml" href="assets/sol-laranja.svg">
-<style>
-[data-icon]{pointer-events:none}
-button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;color:var(--accent)!important}
-</style>
+<link rel="icon" type="image/svg+xml" href="Imagens e Documentação/Imagens/assets/sol-laranja.svg">
+<link rel="stylesheet" href="../CSS/global.css" /> <!-- COLOQUEI REFERÊNCIA AO ARQUIVO-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<!--
+ EU COLOQUEI ESSA PARTE EM CSS/global.css, MAS COMENTEI AQUI COMO ESTAVA ANTES POR PRECAUÇÃO(GABRIEL)
 <style>
 @font-face{font-family:'Luciole';src:url('fonts/Luciole-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:'Luciole';src:url('fonts/Luciole-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
@@ -46,20 +45,21 @@ a:hover{color:var(--fg)}
 [data-lbn-theme="dark"] [data-icon="sun"]{display:none}
 [data-lbn-theme="light"] [data-icon="moon"]{display:none}
 </style>
+-->
 </head>
 <body>
-<div data-lbn-theme="light" id="lbn-root" style="font-family:Luciole,sans-serif;color:var(--fg);background:var(--bg1)">
+<div class="lbn-root" data-lbn-theme="light" id="lbn-root" > <!-- TIREI O STYLE DAQUI E COLOQUEI EM CSS-->
 
-  <header data-screen-label="Nav" style="position:sticky;top:0;z-index:50;background:var(--nav-bg);border-bottom:1px solid var(--hairline);backdrop-filter:blur(8px)">
-    <div style="max-width:1240px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
-      <a href="#topo" style="display:flex;align-items:center;gap:16px;text-decoration:none">
-        <img src="assets/sol-laranja.svg" alt="" style="width:40px;height:40px;display:block;flex:none">
-        <span style="display:flex;flex-direction:column">
-          <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 115;font-weight:800;font-size:19px;line-height:0.9;letter-spacing:-0.02em;color:var(--fg)">LIBERTOS</span>
-          <span style="margin-top:3px;font-family:Archivo,sans-serif;font-weight:700;font-size:8px;letter-spacing:0.19em;color:var(--accent-text);white-space:nowrap">BLACK NETWORK</span>
+  <header data-screen-label="Nav">
+    <div class="nav-container">
+      <a href="#topo">
+        <img src="../Imagens e Documentação/Imagens/assets/sol-laranja.svg" alt="">
+        <span>
+          <span>LIBERTOS</span>
+          <span>BLACK NETWORK</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">
+      <nav>
         <a href="#rede" style="color:var(--fg2)">A rede</a>
         <a href="#encontro" style="color:var(--fg2)">Encontro 2026</a>
         <a href="#clube" style="color:var(--fg2)">Clube dos Libertos</a>
@@ -130,7 +130,7 @@ a:hover{color:var(--fg)}
   </section>
 
   <section id="encontro" data-screen-label="O Encontro" style="background:var(--bg1);color:var(--fg);padding:110px 40px;position:relative;overflow:hidden">
-    <div style="position:absolute;right:-180px;top:-180px;width:640px;height:640px;background-image:url('assets/sol-laranja.svg');background-size:100% 100%;opacity:0.12"></div>
+    <div style="position:absolute;right:-180px;top:-180px;width:640px;height:640px;background-image:url('../Imagens e Documentação/Imagens/assets/sol-laranja.svg');background-size:100% 100%;opacity:0.12"></div>
     <div style="position:relative;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:60px">
       <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>02</span><span style="color:var(--fg)">Encontro 2026</span></div>
 
@@ -147,7 +147,7 @@ a:hover{color:var(--fg)}
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;background:var(--line)">
         <div style="background:var(--card);padding:34px 32px;display:flex;align-items:center;gap:22px">
-          <img src="assets/sol-laranja.svg" alt="" style="width:48px;height:48px;display:block;flex:none">
+          <img src="../Imagens e Documentação/Imagens/assets/sol-laranja.svg" alt="" style="width:48px;height:48px;display:block;flex:none">
           <div>
             <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:30px;letter-spacing:-0.02em;color:var(--fg)">SALVADOR</div>
             <div style="margin-top:6px;font-family:Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent-text)">1ª edição</div>
@@ -170,7 +170,7 @@ a:hover{color:var(--fg)}
       </div>
 
       <div style="border-top:1px solid var(--line);padding-top:36px;display:flex;align-items:center;gap:18px">
-        <img src="assets/sol-laranja.svg" alt="" style="width:34px;height:34px;display:block;flex:none">
+        <img src="../Imagens e Documentação/Imagens/assets/sol-laranja.svg" alt="" style="width:34px;height:34px;display:block;flex:none">
         <div style="font-size:19px;line-height:1.55;color:var(--fg2)">Aqui ficará o link de inscrição em breve.</div>
       </div>
     </div>
@@ -179,9 +179,9 @@ a:hover{color:var(--fg)}
   <section id="clube" data-screen-label="Clube dos Libertos" style="background:var(--bg3);color:var(--fg);padding:110px 40px">
     <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:70px;align-items:center">
       <div style="background:#0A0A0A;padding:60px 48px;display:flex;flex-direction:column;gap:32px">
-        <img src="assets/clube-logo-branco.png" alt="Clube dos Libertos" style="width:min(100%,340px);display:block">
+        <img src="../Imagens e Documentação/Imagens/assets/clube-logo-branco.png" alt="Clube dos Libertos" style="width:min(100%,340px);display:block">
         <div style="display:flex;align-items:center;gap:14px;padding-top:24px;border-top:1px solid #2A2724">
-          <img src="assets/sol-laranja.svg" alt="" style="width:26px;height:26px;display:block;flex:none">
+          <img src="../ Imagens e Documentação/Imagens/assets/sol-laranja.svg" alt="" style="width:26px;height:26px;display:block;flex:none">
           <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:11px;line-height:1.4;letter-spacing:0.15em;text-transform:uppercase;color:#8A8580">Uma iniciativa<br>Libertos Black Network</div>
         </div>
       </div>
@@ -205,22 +205,22 @@ a:hover{color:var(--fg)}
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2px;background:#0A0A0A">
         <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
-          <img src="assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
+          <img src="../Imagens e Documentação/Imagens/assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
           <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Patrocínio do Encontro</div>
           <div style="font-size:16px;line-height:1.55">Presença de marca no principal encontro de carreira negra do Nordeste.</div>
         </div>
         <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
-          <img src="assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
+          <img src="../Imagens e Documentação/Imagens/assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
           <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Mesa com profissionais</div>
           <div style="font-size:16px;line-height:1.55">Seus times conversando diretamente com estudantes por área de carreira.</div>
         </div>
         <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
-          <img src="assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
+          <img src="../Imagens e Documentação/Imagens/assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
           <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Divulgação de vagas</div>
           <div style="font-size:16px;line-height:1.55">Oportunidades circulando dentro da rede, para quem já está em contato com ela.</div>
         </div>
         <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
-          <img src="assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
+          <img src="../Imagens e Documentação/Imagens/assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
           <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Métricas ESG mensuráveis</div>
           <div style="font-size:16px;line-height:1.55">Dados concretos de alcance e engajamento para relatar no pilar social da sua companhia.</div>
         </div>
@@ -264,7 +264,7 @@ a:hover{color:var(--fg)}
   <footer data-screen-label="Rodapé" style="background:var(--bg1);color:var(--fg);border-top:1px solid var(--hairline);padding:56px 40px">
     <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:18px">
-        <img src="assets/sol-laranja.svg" alt="" style="width:46px;height:46px;display:block;flex:none">
+        <img src="../Imagens e Documentação/Imagens/assets/sol-laranja.svg" alt="" style="width:46px;height:46px;display:block;flex:none">
         <div style="display:flex;flex-direction:column">
           <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 115;font-weight:800;font-size:21px;line-height:0.9;letter-spacing:-0.02em">LIBERTOS</div>
           <div style="margin-top:4px;font-family:Archivo,sans-serif;font-weight:700;font-size:9px;letter-spacing:0.19em;color:var(--accent-text);white-space:nowrap">BLACK NETWORK</div>
@@ -281,7 +281,7 @@ a:hover{color:var(--fg)}
 <div id="lbn-modal" onclick="lbnCloseModal()" style="position:fixed;inset:0;z-index:100;background:rgba(10,10,10,0.72);display:none;align-items:center;justify-content:center;padding:32px">
       <div onclick="event.stopPropagation()" role="dialog" aria-modal="true" style="background:var(--bg1);border:2px solid var(--accent);max-width:520px;width:100%;padding:48px 44px;display:flex;flex-direction:column;gap:24px;position:relative">
         <button type="button" onclick="lbnCloseModal()" aria-label="Fechar" style="position:absolute;top:14px;right:14px;width:36px;height:36px;padding:0;border:0;background:transparent;color:var(--fg3);font-size:26px;line-height:1;cursor:pointer;font-family:inherit">&times;</button>
-        <img src="assets/sol-laranja.svg" alt="" style="width:52px;height:52px;display:block">
+        <img src="../Imagens e Documentação/Imagens/assets/sol-laranja.svg" alt="" style="width:52px;height:52px;display:block">
         <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:32px;line-height:1.05;letter-spacing:-0.025em;color:var(--fg);text-wrap:balance">Ficamos muito felizes com o seu interesse</div>
         <p style="margin:0;font-size:18px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Entre em contato pelo nosso e-mail e respondemos rapidamente.</p>
         <a href="mailto:libertosblacknetwork@gmail.com" style="background:var(--accent);color:var(--on-accent);padding:18px 24px;font-family:Archivo,sans-serif;font-weight:800;font-size:16px;letter-spacing:0.02em;text-align:center;word-break:break-word">libertosblacknetwork@gmail.com</a>
