@@ -10,14 +10,14 @@ button[onclick="lbnToggleTheme()"]:hover {
 
 @font-face {
   font-family: 'Luciole';
-  src: url('../Imagens e Documentação/Documentação/fonts/Luciole-Regular.ttf') format('truetype');
+  src: url('../imagens-e-documentacao/documentacao/fonts/Luciole-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Luciole';
-  src: url('../Imagens e Documentação/Documentação/fonts/Luciole-Bold.ttf') format('truetype');
+  src: url('../imagens-e-documentacao/documentacao/fonts/Luciole-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
 }
@@ -38,7 +38,7 @@ html, body {
   --line:#2A2724; --hairline:#201D1A;
   --card:#141311; --dash:#3A3733;
   --nav-bg:rgba(10,10,10,0.94);
-  --tile:url('../Imagens e Documentação/Imagens/sol-branco.svg');
+  --tile:url('../imagens-e-documentacao/imagens/assets/sol-branco.svg');
   --tile-op:0.05;
   --accent:#FF4B0F; --accent-text:#FF4B0F; --on-accent:#0A0A0A;
 }
@@ -49,7 +49,7 @@ html, body {
   --line:#E4DFD7; --hairline:#E4DFD7;
   --card:#F4F1EC; --dash:#C9C2B7;
   --nav-bg:rgba(255,255,255,0.94);
-  --tile:url('../Imagens e Documentação/Imagens/sol-preto.svg'); --tile-op:0.05;
+  --tile:url('../imagens-e-documentacao/imagens/assets/sol-preto.svg'); --tile-op:0.05;
   --accent:#FF4B0F; --accent-text:#C43000; --on-accent:#0A0A0A;
 }
 
@@ -153,4 +153,8 @@ nav-container nav {
   text-transform:uppercase
 }
 
-
+lbn-root-container{
+  font-family:Luciole,sans-serif;
+  color:var(--fg);
+  background:var(--bg1)
+}
