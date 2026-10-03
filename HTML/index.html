@@ -237,11 +237,15 @@
   <section class="lbn-sec" id="apoie" data-screen-label="Apoie" style="background:var(--bg1);color:var(--fg);position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background-image:var(--tile);background-size:170px 170px;opacity:0.04"></div>
     <div class="lbn-apoie-grid">
-      <div>
-        <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>06</span><span style="color:var(--fg)">Apoie</span></div>
-        <h2 style="margin:16px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(22px,2vw,28px);line-height:1.15;letter-spacing:-0.02em;text-transform:uppercase;text-wrap:balance">Se quiser ir rápido, vá sozinho. Se quiser ir longe, vá em grupo.</h2>
-        <p style="margin:20px 0 0;font-size:16px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Se você quer viver a universidade indo além da sala de aula, compartilhar o seu caminho ou trazer a sua empresa para perto da rede, esse espaço também é seu. Preencha os campos e a gente responde rápido.</p>
-        <p style="margin:16px 0 0;font-size:15px;line-height:1.6;color:var(--fg3)">Prefere falar direto? <a href="mailto:libertosblacknetwork@gmail.com" class="lbn-link">libertosblacknetwork@gmail.com</a></p>
+      <div class="lbn-apoie-head">
+        <div>
+          <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>06</span><span style="color:var(--fg)">Apoie</span></div>
+          <h2 style="margin:16px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.08;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Se quiser ir rápido, vá sozinho. Se quiser ir longe, vá em grupo.</h2>
+        </div>
+        <div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Se você quer viver a universidade indo além da sala de aula, compartilhar o seu caminho ou trazer a sua empresa para perto da rede, esse espaço também é seu. Preencha os campos e a gente responde rápido.</p>
+          <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:var(--fg3)">Prefere falar direto? <a href="mailto:libertosblacknetwork@gmail.com" class="lbn-link">libertosblacknetwork@gmail.com</a></p>
+        </div>
       </div>
       <div class="lbn-form-wrap">
         <div class="lbn-tabs" role="tablist" aria-label="Tipo de apoio">
@@ -252,7 +256,7 @@
         <form id="form-empresa" class="lbn-form" role="tabpanel" aria-labelledby="tab-empresa" novalidate>
           <input type="hidden" name="tipo" value="empresa">
           <input type="text" name="site" class="lbn-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <div class="lbn-grid2">
+          <div class="lbn-grid2 lbn-grid4">
             <label class="lbn-field"><span>Nome da empresa *</span><input type="text" name="empresa" required maxlength="120" autocomplete="organization"></label>
             <label class="lbn-field"><span>Seu nome *</span><input type="text" name="nome" required maxlength="120" autocomplete="name"></label>
             <label class="lbn-field"><span>Cargo</span><input type="text" name="cargo" maxlength="120" autocomplete="organization-title"></label>
@@ -282,7 +286,7 @@
             <label class="lbn-field"><span>Celular</span><input type="tel" name="celular" maxlength="20" placeholder="(00) 0 0000-0000" autocomplete="tel"></label>
           </div>
           <label class="lbn-field"><span>E-mail *</span><input type="email" name="email" required maxlength="160" placeholder="exemplo@email.com" autocomplete="email"></label>
-          <div class="lbn-grid2">
+          <div class="lbn-grid2 lbn-grid4">
             <label class="lbn-field"><span>Eu sou *</span><select name="perfil" required><option value="">Selecione</option><option>Universitário(a)</option><option>Profissional</option><option>Outro</option></select></label>
             <label class="lbn-field"><span>Estado *</span><select name="estado" required><option value="">Selecione</option><option>AL</option><option>BA</option><option>CE</option><option>MA</option><option>PB</option><option>PE</option><option>PI</option><option>RN</option><option>SE</option><option>AC</option><option>AP</option><option>AM</option><option>PA</option><option>RO</option><option>RR</option><option>TO</option><option>DF</option><option>GO</option><option>MT</option><option>MS</option><option>ES</option><option>MG</option><option>RJ</option><option>SP</option><option>PR</option><option>RS</option><option>SC</option></select></label>
             <label class="lbn-field"><span>Universidade ou empresa</span><input type="text" name="instituicao" maxlength="120"></label>

@@ -253,12 +253,9 @@ a:hover { color:var(--accent-text) }
 .lbn-offer:hover { background:#0A0A0A; color:#FF4B0F }
 .lbn-offer:hover .lbn-sol { transform:rotate(30deg); transition:transform .4s ease }
 
-/* Formulário Apoie: texto estreito à esquerda, formulário largo à direita */
-.lbn-apoie-grid {
-  position:relative; max-width:1240px; margin:0 auto;
-  display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:56px; align-items:start;
-}
-.lbn-apoie-grid > div:first-child { max-width:400px; position:sticky; top:140px }
+/* Formulário Apoie: título e legenda lado a lado, formulário embaixo */
+.lbn-apoie-grid { position:relative; max-width:1240px; margin:0 auto; display:flex; flex-direction:column; gap:40px }
+.lbn-apoie-head { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:24px 56px; align-items:end }
 .lbn-form-wrap { background:var(--card); border:1px solid var(--line) }
 .lbn-tabs { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--line) }
 .lbn-tabs button {
@@ -287,6 +284,9 @@ a:hover { color:var(--accent-text) }
 .lbn-fieldset { border:0; margin:0; padding:0; display:flex; flex-direction:column; gap:12px }
 .lbn-fieldset legend { padding:0; margin-bottom:12px }
 .lbn-checks { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px }
+.lbn-grid4 { grid-template-columns:repeat(2,minmax(0,1fr)) }
+@media (min-width:1000px) { .lbn-checks, .lbn-grid4 { grid-template-columns:repeat(4,minmax(0,1fr)) } }
+@media (max-width:520px) { .lbn-grid4 { grid-template-columns:1fr } }
 @media (max-width:520px) { .lbn-checks { grid-template-columns:1fr } }
 .lbn-check { display:flex; align-items:flex-start; gap:12px; cursor:pointer; font-size:16px; line-height:1.45; color:var(--fg) }
 .lbn-check input { width:20px; height:20px; margin:1px 0 0; flex:none; accent-color:var(--accent); cursor:pointer }
@@ -361,7 +361,7 @@ a:hover { color:var(--accent-text) }
   .lbn-links { font-size:11px; gap:22px }
   .lbn-theme { width:40px; height:40px }
   .lbn-hero-in { padding:44px 20px 52px; gap:28px }
-  .lbn-apoie-grid { grid-template-columns:1fr; gap:32px }
+  .lbn-apoie-grid { gap:28px }
   .lbn-hero-in p { font-size:18px !important }
   .lbn-btn { padding:15px 22px; font-size:14px }
   .lbn-btn-sm { padding:10px 16px; font-size:12px }
@@ -381,8 +381,6 @@ a:hover { color:var(--accent-text) }
   .lbn-foot-grid { grid-template-columns:1fr 1fr; gap:40px 32px }
   .lbn-foot-brand { grid-column:1 / -1 }
   .lbn-clube-grid { grid-template-columns:1fr; gap:32px }
-  .lbn-apoie-grid { grid-template-columns:1fr; gap:36px }
-  .lbn-apoie-grid > div:first-child { max-width:none; position:static }
 }
 
 /* Celular: vem depois do bloco de 900px para prevalecer */
