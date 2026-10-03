@@ -223,8 +223,8 @@ a:hover { color:var(--accent-text) }
 
 /* Hero */
 .lbn-hero-in {
-  position:relative; max-width:1240px; margin:0 auto; padding:96px 40px 100px;
-  display:flex; flex-direction:column; gap:48px;
+  position:relative; max-width:1240px; margin:0 auto; padding:72px 40px 80px;
+  display:flex; flex-direction:column; gap:36px;
 }
 .lbn-invite {
   align-self:flex-start; display:flex; align-items:center; gap:18px; flex-wrap:wrap;
@@ -233,7 +233,7 @@ a:hover { color:var(--accent-text) }
 .lbn-invite:hover { color:var(--bg1); box-shadow:6px 6px 0 var(--accent); transform:translate(-2px,-2px) }
 
 /* Seções e cartões */
-.lbn-sec { padding:110px 40px }
+.lbn-sec { padding:80px 40px }
 .lbn-card:hover { box-shadow:inset 0 4px 0 var(--accent) }
 .lbn-card:hover .lbn-card-title { color:var(--accent-text) }
 
@@ -249,7 +249,12 @@ a:hover { color:var(--accent-text) }
 .lbn-offer:hover { background:#0A0A0A; color:#FF4B0F }
 .lbn-offer:hover .lbn-sol { transform:rotate(30deg); transition:transform .4s ease }
 
-/* Formulário Apoie */
+/* Formulário Apoie: texto estreito à esquerda, formulário largo à direita */
+.lbn-apoie-grid {
+  position:relative; max-width:1240px; margin:0 auto;
+  display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:56px; align-items:start;
+}
+.lbn-apoie-grid > div:first-child { max-width:400px }
 .lbn-form-wrap { background:var(--card); border:1px solid var(--line) }
 .lbn-tabs { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--line) }
 .lbn-tabs button {
@@ -277,7 +282,8 @@ a:hover { color:var(--accent-text) }
 .lbn-field:focus-within > span { color:var(--accent-text) }
 .lbn-fieldset { border:0; margin:0; padding:0; display:flex; flex-direction:column; gap:12px }
 .lbn-fieldset legend { padding:0; margin-bottom:12px }
-.lbn-checks { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:10px }
+.lbn-checks { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px }
+@media (max-width:520px) { .lbn-checks { grid-template-columns:1fr } }
 .lbn-check { display:flex; align-items:flex-start; gap:12px; cursor:pointer; font-size:16px; line-height:1.45; color:var(--fg) }
 .lbn-check input { width:20px; height:20px; margin:1px 0 0; flex:none; accent-color:var(--accent); cursor:pointer }
 .lbn-check:hover { color:var(--accent-text) }
@@ -314,13 +320,14 @@ a:hover { color:var(--accent-text) }
 }
 
 @media (max-width:760px) {
-  .lbn-sec { padding:72px 20px }
+  .lbn-sec { padding:56px 20px }
   .lbn-header-in { padding:10px 20px }
   .lbn-logo { gap:12px }
   .lbn-logo img { width:34px !important; height:34px !important }
   .lbn-links { font-size:11px; gap:22px }
   .lbn-theme { width:40px; height:40px }
-  .lbn-hero-in { padding:56px 20px 64px; gap:36px }
+  .lbn-hero-in { padding:44px 20px 52px; gap:28px }
+  .lbn-apoie-grid { grid-template-columns:1fr; gap:32px }
   .lbn-hero-in p { font-size:18px !important }
   .lbn-btn { padding:15px 22px; font-size:14px }
   .lbn-btn-sm { padding:10px 16px; font-size:12px }
@@ -332,7 +339,18 @@ a:hover { color:var(--accent-text) }
   .lbn-sec p { font-size:18px }
 }
 
+/* Blocos surgem ao rolar (só quando o JS está ativo) */
+.lbn-js .lbn-reveal { opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1) }
+.lbn-js .lbn-reveal.is-in { opacity:1; transform:none }
+.lbn-js .lbn-card.lbn-reveal, .lbn-js .lbn-offer.lbn-reveal { transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), color .2s ease, background-color .2s ease, box-shadow .2s ease }
+
+@media (max-width:900px) {
+  .lbn-apoie-grid { grid-template-columns:1fr; gap:36px }
+  .lbn-apoie-grid > div:first-child { max-width:none }
+}
+
 @media (prefers-reduced-motion:reduce) {
+  .lbn-js .lbn-reveal { opacity:1; transform:none }
   html { scroll-behavior:auto }
   .lbn-root *, .lbn-root *::after { transition:none !important; transform:none !important }
 }
