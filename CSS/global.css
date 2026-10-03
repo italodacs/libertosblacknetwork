@@ -33,14 +33,14 @@ html, body {
 }
 
 [data-lbn-theme="dark"]{
-  --bg1:#0A0A0A; --bg2:#141311; --bg3:#0A0A0A;
-  --fg:#FFFFFF; --fg2:#CFC9C1; --fg3:#8A8580;
-  --line:#2A2724; --hairline:#201D1A;
-  --card:#141311; --dash:#3A3733;
+  --bg1:#0A0A0A; --bg2:#1A1916; --bg3:#0A0A0A;
+  --fg:#FFFFFF; --fg2:#E8E4DF; --fg3:#A6A09A;
+  --line:#3A3733; --hairline:#2A2724;
+  --card:#1A1916; --dash:#4A453F;
   --nav-bg:rgba(10,10,10,0.94);
   --tile:url('../imagens-e-documentacao/imagens/assets/sol-branco.svg');
-  --tile-op:0.05;
-  --accent:#FF4B0F; --accent-text:#FF4B0F; --on-accent:#0A0A0A;
+  --tile-op:0.08;
+  --accent:#FF5C26; --accent-text:#FF5C26; --on-accent:#0A0A0A;
 }
 
 [data-lbn-theme="light"]{
