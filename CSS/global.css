@@ -225,6 +225,8 @@ a:hover { color:var(--accent-text) }
 
 /* Seções e cartões */
 .lbn-sec { padding:80px 40px }
+#clube.lbn-sec { padding-bottom:56px }
+#empresas.lbn-sec { padding-top:64px }
 .lbn-card:hover { box-shadow:inset 0 4px 0 var(--accent) }
 .lbn-card:hover .lbn-card-title { color:var(--accent-text) }
 
@@ -256,7 +258,7 @@ a:hover { color:var(--accent-text) }
   position:relative; max-width:1240px; margin:0 auto;
   display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:56px; align-items:start;
 }
-.lbn-apoie-grid > div:first-child { max-width:400px }
+.lbn-apoie-grid > div:first-child { max-width:400px; position:sticky; top:140px }
 .lbn-form-wrap { background:var(--card); border:1px solid var(--line) }
 .lbn-tabs { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--line) }
 .lbn-tabs button {
@@ -266,18 +268,18 @@ a:hover { color:var(--accent-text) }
 }
 .lbn-tabs button:hover { color:var(--accent-text) }
 .lbn-tabs button[aria-selected="true"] { color:var(--fg); background:var(--bg1); box-shadow:inset 0 -3px 0 var(--accent) }
-.lbn-form { padding:32px; display:flex; flex-direction:column; gap:20px }
+.lbn-form { padding:28px 32px; display:flex; flex-direction:column; gap:16px }
 .lbn-form[hidden] { display:none }
-.lbn-grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:20px }
+.lbn-grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:16px }
 .lbn-field { display:flex; flex-direction:column; gap:8px }
 .lbn-field > span, .lbn-fieldset legend {
   font-family:Archivo,sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg2);
 }
 .lbn-field input, .lbn-field select, .lbn-field textarea {
-  width:100%; box-sizing:border-box; padding:14px 16px; border:2px solid var(--line); border-radius:0;
+  width:100%; box-sizing:border-box; padding:11px 14px; border:2px solid var(--line); border-radius:0;
   background:var(--bg1); color:var(--fg); font:inherit; font-size:16px;
 }
-.lbn-field textarea { resize:vertical; min-height:110px }
+.lbn-field textarea { resize:vertical; min-height:84px }
 .lbn-field input::placeholder, .lbn-field textarea::placeholder { color:var(--fg3) }
 .lbn-field input:hover, .lbn-field select:hover, .lbn-field textarea:hover { border-color:var(--fg3) }
 .lbn-field input:focus, .lbn-field select:focus, .lbn-field textarea:focus { outline:none; border-color:var(--accent) }
@@ -289,13 +291,14 @@ a:hover { color:var(--accent-text) }
 .lbn-check { display:flex; align-items:flex-start; gap:12px; cursor:pointer; font-size:16px; line-height:1.45; color:var(--fg) }
 .lbn-check input { width:20px; height:20px; margin:1px 0 0; flex:none; accent-color:var(--accent); cursor:pointer }
 .lbn-check:hover { color:var(--accent-text) }
-.lbn-checks .lbn-check { border:2px solid var(--line); padding:12px 14px; background:var(--bg1) }
+.lbn-checks .lbn-check { border:2px solid var(--line); padding:10px 12px; background:var(--bg1); font-size:15px }
 .lbn-checks .lbn-check:hover { border-color:var(--accent) }
 .lbn-checks .lbn-check:has(input:checked) { border-color:var(--accent); box-shadow:inset 4px 0 0 var(--accent) }
 .lbn-consent { font-size:15px; color:var(--fg2) }
 .lbn-submit { align-self:flex-start; margin-top:4px }
 .lbn-hp { position:absolute; left:-9999px; width:1px; height:1px; opacity:0 }
 .lbn-status { margin:0; font-size:16px; line-height:1.5; min-height:1.5em; color:var(--fg2) }
+.lbn-status:empty { display:none }
 .lbn-status.is-ok { color:var(--fg); font-weight:700 }
 .lbn-status.is-error { color:var(--accent-text); font-weight:700 }
 
@@ -350,6 +353,8 @@ a:hover { color:var(--accent-text) }
 
 @media (max-width:760px) {
   .lbn-sec { padding:56px 20px }
+  #clube.lbn-sec { padding-bottom:40px }
+  #empresas.lbn-sec { padding-top:48px }
   .lbn-header-in { padding:10px 20px }
   .lbn-logo { gap:12px }
   .lbn-logo img { width:34px !important; height:34px !important }
@@ -377,7 +382,7 @@ a:hover { color:var(--accent-text) }
   .lbn-foot-brand { grid-column:1 / -1 }
   .lbn-clube-grid { grid-template-columns:1fr; gap:32px }
   .lbn-apoie-grid { grid-template-columns:1fr; gap:36px }
-  .lbn-apoie-grid > div:first-child { max-width:none }
+  .lbn-apoie-grid > div:first-child { max-width:none; position:static }
 }
 
 /* Celular: vem depois do bloco de 900px para prevalecer */
