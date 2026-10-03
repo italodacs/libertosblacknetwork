@@ -5,6 +5,10 @@
     {
       "source": "/",
       "destination": "/HTML/index.html"
+    },
+    {
+      "source": "/((?!HTML|CSS|SCRIPT|imagens-e-documentacao).*)",
+      "destination": "/HTML/index.html"
     }
   ]
 }
