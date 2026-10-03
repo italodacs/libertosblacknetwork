@@ -10,10 +10,6 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="/imagens-e-documentacao/imagens/assets/sol-laranja.svg">
 <link rel="stylesheet" href="/CSS/global.css">
-<style>
-[data-icon]{pointer-events:none}
-button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;color:var(--accent)!important}
-</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
@@ -22,34 +18,35 @@ button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;co
 <body>
 <div class="lbn-root" data-lbn-theme="light" id="lbn-root" >
 
-  <header data-screen-label="Nav" style="position:sticky;top:0;z-index:50;background:var(--nav-bg);border-bottom:1px solid var(--hairline);backdrop-filter:blur(8px)">
-    <div style="max-width:1240px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
-      <a href="#topo" style="display:flex;align-items:center;gap:16px;text-decoration:none">
+  <header class="lbn-header" data-screen-label="Nav">
+    <div class="lbn-header-in">
+      <a href="#topo" class="lbn-logo" aria-label="Libertos Black Network, início">
         <img src="/imagens-e-documentacao/imagens/assets/sol-laranja.svg" alt="" style="width:40px;height:40px;display:block;flex:none">
         <span style="display:flex;flex-direction:column">
           <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 115;font-weight:800;font-size:19px;line-height:0.9;letter-spacing:-0.02em;color:var(--fg)">LIBERTOS</span>
           <span style="margin-top:3px;font-family:Archivo,sans-serif;font-weight:700;font-size:8px;letter-spacing:0.19em;color:var(--accent-text);white-space:nowrap">BLACK NETWORK</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">
-        <a href="#rede" style="color:var(--fg2)">A rede</a>
-        <a href="#encontro" style="color:var(--fg2)">Encontro 2026</a>
-        <a href="#clube" style="color:var(--fg2)">Clube dos Libertos</a>
-        <a href="#empresas" style="color:var(--fg2)">Para empresas</a>
-        <a href="#contato" style="background:var(--accent);color:var(--on-accent);padding:11px 20px;letter-spacing:0.12em">Faça parte</a>
-        <button type="button" onclick="lbnToggleTheme()" aria-label="Alternar tema claro e escuro" title="Alternar tema" style="width:44px;height:44px;flex:none;padding:0;border:2px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;display:flex;align-items:center;justify-content:center" >
+      <nav class="lbn-links" aria-label="Seções">
+        <a href="#rede">A rede</a>
+        <a href="#encontro">Encontro 2026</a>
+        <a href="#clube">Clube dos Libertos</a>
+        <a href="#empresas">Para empresas</a>
+      </nav>
+      <div class="lbn-actions">
+        <a href="#apoie" class="lbn-btn lbn-btn-sm">Apoie</a>
+        <button type="button" class="lbn-theme" onclick="lbnToggleTheme()" aria-label="Alternar tema claro e escuro" title="Alternar tema">
           <svg data-icon="moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
           <svg data-icon="sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"></path></svg>
         </button>
-
-      </nav>
+      </div>
     </div>
   </header>
 
   <section id="topo" data-screen-label="Hero" style="position:relative;background:var(--bg1);color:var(--fg);overflow:hidden">
     <div style="position:absolute;inset:0;background-image:var(--tile);background-size:150px 150px;opacity:var(--tile-op)"></div>
-    <div style="position:relative;max-width:1240px;margin:0 auto;padding:96px 40px 100px;display:flex;flex-direction:column;gap:48px">
-      <a href="#encontro" style="align-self:flex-start;display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:var(--fg);color:var(--bg1);padding:14px 22px 14px 14px;text-decoration:none">
+    <div class="lbn-hero-in">
+      <a href="#encontro" class="lbn-invite">
         <span style="background:var(--accent);color:var(--on-accent);padding:8px 14px;font-family:Archivo,sans-serif;font-weight:800;font-size:13px;letter-spacing:0.16em;text-transform:uppercase">Encontro 2026</span>
         <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.04em">1ª edição em Salvador &middot; inscrições em breve <span style="font-weight:800;color:var(--accent)">&rarr;</span></span>
       </a>
@@ -58,13 +55,13 @@ button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;co
           <span style="width:44px;height:3px;background:var(--accent);flex:none"></span>
           <span>Universitários negros do Nordeste &middot; profissionais negros de todo o Brasil</span>
         </div>
-        <h1 style="margin:0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 100;font-weight:800;font-size:clamp(38px,5vw,72px);line-height:1;letter-spacing:-0.03em;text-transform:uppercase;max-width:1160px;text-wrap:balance">A rede que conecta universitários, profissionais e empresas</h1>
+        <h1 style="margin:0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 100;font-weight:800;font-size:clamp(28px,3.2vw,46px);line-height:1;letter-spacing:-0.03em;text-transform:uppercase;max-width:1160px;text-wrap:balance">A rede que conecta universitários, profissionais e empresas</h1>
       </div>
       <div style="display:flex;gap:56px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap">
         <p style="margin:0;max-width:620px;font-size:21px;line-height:1.6;color:var(--fg2);text-wrap:pretty">A Libertos Black Network aproxima estudantes negros do Nordeste de quem já está no mercado, em trocas online e presencialmente no nosso Encontro Libertos Black Network.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap">
-          <a href="#encontro" style="background:var(--accent);color:var(--on-accent);padding:19px 30px;font-family:Archivo,sans-serif;font-weight:800;font-size:15px;letter-spacing:0.1em;text-transform:uppercase">Quero ir ao Encontro</a>
-          <a href="#contato" style="border:2px solid var(--line);color:var(--fg);padding:17px 30px;font-family:Archivo,sans-serif;font-weight:800;font-size:15px;letter-spacing:0.1em;text-transform:uppercase">Faça parte</a>
+          <a href="#encontro" class="lbn-btn">Quero ir ao Encontro</a>
+          <a href="#apoie" class="lbn-btn lbn-btn-ghost">Apoie</a>
         </div>
       </div>
     </div>
@@ -75,12 +72,12 @@ button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;co
     </div>
   </section>
 
-  <section id="rede" data-screen-label="A rede" style="background:var(--bg2);color:var(--fg);padding:110px 40px">
+  <section class="lbn-sec" id="rede" data-screen-label="A rede" style="background:var(--bg2);color:var(--fg)">
     <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:60px">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:60px;align-items:start">
         <div>
           <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>01</span><span style="color:var(--fg)">A rede</span></div>
-          <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(34px,4.2vw,54px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Nascemos de um grupo de jovens negros do Nordeste</h2>
+          <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Nascemos de um grupo de jovens negros do Nordeste</h2>
         </div>
         <div style="display:flex;flex-direction:column;gap:24px">
           <p style="margin:0;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">A Libertos Black Network surgiu inspirada pela <a href="https://www.redeubn.com.br/" target="_blank" rel="noopener" style="color:var(--accent-text);text-decoration:underline;text-underline-offset:3px">Unicamp Black Network</a>, de São Paulo, e movida por uma questão simples: o acesso a oportunidades de todo o Brasil, e a chance de conversar com profissionais experientes.</p>
@@ -89,61 +86,61 @@ button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;co
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--line)">
-        <div style="background:var(--bg2);padding:40px 36px;display:flex;flex-direction:column;gap:16px">
-          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:34px;color:var(--accent)">01</div>
-          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:26px;line-height:1.1;letter-spacing:-0.02em">Aproximamos você de quem já está lá</div>
+        <div class="lbn-card" style="background:var(--bg2);padding:40px 36px;display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:24px;color:var(--accent)">01</div>
+          <div class="lbn-card-title" style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:20px;line-height:1.1;letter-spacing:-0.02em">Aproximamos você de quem já está lá</div>
           <div style="font-size:17px;line-height:1.55;color:var(--fg2)">Conversas diretas com profissionais negros que atuam em empresas, escritórios, órgãos públicos e negócios próprios.</div>
         </div>
-        <div style="background:var(--bg2);padding:40px 36px;display:flex;flex-direction:column;gap:16px">
-          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:34px;color:var(--accent)">02</div>
-          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:26px;line-height:1.1;letter-spacing:-0.02em">Levamos o Nordeste para a mesa nacional</div>
+        <div class="lbn-card" style="background:var(--bg2);padding:40px 36px;display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:24px;color:var(--accent)">02</div>
+          <div class="lbn-card-title" style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:20px;line-height:1.1;letter-spacing:-0.02em">Levamos o Nordeste para a mesa nacional</div>
           <div style="font-size:17px;line-height:1.55;color:var(--fg2)">Estudantes daqui em contato com oportunidades de todo o Brasil, sem precisar sair da própria região para entender como acessar essas oportunidades.</div>
         </div>
-        <div style="background:var(--bg2);padding:40px 36px;display:flex;flex-direction:column;gap:16px">
-          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:34px;color:var(--accent)">03</div>
-          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:26px;line-height:1.1;letter-spacing:-0.02em">Transformamos contato em oportunidade real</div>
+        <div class="lbn-card" style="background:var(--bg2);padding:40px 36px;display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:24px;color:var(--accent)">03</div>
+          <div class="lbn-card-title" style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:20px;line-height:1.1;letter-spacing:-0.02em">Transformamos contato em oportunidade real</div>
           <div style="font-size:17px;line-height:1.55;color:var(--fg2)">Indicação, divulgação de vagas e relações que continuam depois que a conversa acaba.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="trajetoria" data-screen-label="Trajetória" style="background:var(--bg3);color:var(--fg);padding:110px 40px;position:relative;overflow:hidden">
+  <section class="lbn-sec" id="trajetoria" data-screen-label="Trajetória" style="background:var(--bg3);color:var(--fg);position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background-image:var(--tile);background-size:150px 150px;opacity:var(--tile-op)"></div>
     <div style="position:relative;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:64px">
       <div>
         <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>02</span><span style="color:var(--fg)">Ações e impacto</span></div>
-        <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(34px,4.2vw,54px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Nossa trajetória até aqui</h2>
+        <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Nossa trajetória até aqui</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--line)">
-        <div style="background:var(--card);padding:36px 34px;display:flex;flex-direction:column;gap:14px">
+        <div class="lbn-card" style="background:var(--card);padding:36px 34px;display:flex;flex-direction:column;gap:14px">
           <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-text)">2025</div>
-          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(56px,6vw,88px);line-height:0.9;letter-spacing:-0.04em;color:var(--fg)">465</div>
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(40px,3.8vw,56px);line-height:0.9;letter-spacing:-0.04em" class="lbn-card-title">465</div>
           <div style="font-size:17px;line-height:1.5;color:var(--fg2)">pessoas alcançadas em 16 ações, com 554 inscrições</div>
         </div>
-        <div style="background:var(--card);padding:36px 34px;display:flex;flex-direction:column;gap:14px">
+        <div class="lbn-card" style="background:var(--card);padding:36px 34px;display:flex;flex-direction:column;gap:14px">
           <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-text)">2026</div>
-          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(56px,6vw,88px);line-height:0.9;letter-spacing:-0.04em;color:var(--fg)">198</div>
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(40px,3.8vw,56px);line-height:0.9;letter-spacing:-0.04em" class="lbn-card-title">198</div>
           <div style="font-size:17px;line-height:1.5;color:var(--fg2)">pessoas alcançadas em 6 ações até agora, com mais de 230 inscrições</div>
         </div>
         <div style="background:var(--accent);color:var(--on-accent);padding:36px 34px;display:flex;flex-direction:column;gap:14px">
           <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;">Comunidade ativa</div>
-          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(56px,6vw,88px);line-height:0.9;letter-spacing:-0.04em;">+150</div>
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(40px,3.8vw,56px);line-height:0.9;letter-spacing:-0.04em;">+150</div>
           <div style="font-size:17px;line-height:1.5;">pessoas trocando com a rede no dia a dia</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="encontro" data-screen-label="O Encontro" style="background:var(--bg1);color:var(--fg);padding:110px 40px;position:relative;overflow:hidden">
+  <section class="lbn-sec" id="encontro" data-screen-label="O Encontro" style="background:var(--bg1);color:var(--fg);position:relative;overflow:hidden">
     <div style="position:absolute;right:-180px;top:-180px;width:640px;height:640px;background-image:url('/imagens-e-documentacao/imagens/assets/sol-laranja.svg');background-size:100% 100%;opacity:0.12"></div>
     <div style="position:relative;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:60px">
       <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>03</span><span style="color:var(--fg)">Encontro 2026</span></div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:60px;align-items:center">
         <div style="display:flex;flex-direction:column">
-          <div style="display:inline-block;align-self:flex-start;background:var(--accent);color:var(--on-accent);padding:11px 20px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:clamp(22px,2.6vw,34px);line-height:1;letter-spacing:0.13em">ENCONTRO 2026</div>
-          <div style="margin-top:18px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(36px,5.2vw,68px);line-height:0.9;letter-spacing:-0.032em">LIBERTOS<br>BLACK NETWORK</div>
+          <div style="display:inline-block;align-self:flex-start;background:var(--accent);color:var(--on-accent);padding:11px 20px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 118;font-weight:800;font-size:clamp(15px,1.4vw,19px);line-height:1;letter-spacing:0.13em">ENCONTRO 2026</div>
+          <div style="margin-top:18px;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(26px,2.8vw,38px);line-height:0.9;letter-spacing:-0.032em">LIBERTOS<br>BLACK NETWORK</div>
         </div>
         <div style="display:flex;flex-direction:column;gap:24px">
           <p style="margin:0;font-size:22px;line-height:1.55;color:var(--fg);text-wrap:pretty">O dia em que a rede sai da tela e ocupa um mesmo espaço.</p>
@@ -152,24 +149,24 @@ button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;co
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;background:var(--line)">
-        <div style="background:var(--card);padding:34px 32px;display:flex;align-items:center;gap:22px">
+        <div class="lbn-card" style="background:var(--card);padding:34px 32px;display:flex;align-items:center;gap:22px">
           <img src="/imagens-e-documentacao/imagens/assets/sol-laranja.svg" alt="" style="width:48px;height:48px;display:block;flex:none">
           <div>
-            <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:30px;letter-spacing:-0.02em;color:var(--fg)">SALVADOR</div>
+            <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:22px;letter-spacing:-0.02em" class="lbn-card-title">SALVADOR</div>
             <div style="margin-top:6px;font-family:Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent-text)">1ª edição</div>
           </div>
         </div>
-        <div style="background:var(--card);padding:34px 32px;display:flex;align-items:center;gap:22px">
+        <div class="lbn-card" style="background:var(--card);padding:34px 32px;display:flex;align-items:center;gap:22px">
           <div style="width:48px;height:48px;border:3px dashed var(--dash);border-radius:50%;flex:none"></div>
           <div>
-            <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:30px;letter-spacing:-0.02em;color:var(--fg3)">2027</div>
+            <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:22px;letter-spacing:-0.02em;color:var(--fg3)">2027</div>
             <div style="margin-top:6px;font-family:Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg3)">outro estado</div>
           </div>
         </div>
-        <div style="background:var(--card);padding:34px 32px;display:flex;align-items:center;gap:22px">
+        <div class="lbn-card" style="background:var(--card);padding:34px 32px;display:flex;align-items:center;gap:22px">
           <div style="width:48px;height:48px;border:3px dashed var(--dash);border-radius:50%;flex:none"></div>
           <div>
-            <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:30px;letter-spacing:-0.02em;color:var(--fg3)">E SEGUE</div>
+            <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:22px;letter-spacing:-0.02em;color:var(--fg3)">E SEGUE</div>
             <div style="margin-top:6px;font-family:Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg3)">nordeste inteiro</div>
           </div>
         </div>
@@ -182,9 +179,9 @@ button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;co
     </div>
   </section>
 
-  <section id="clube" data-screen-label="Clube dos Libertos" style="background:var(--bg3);color:var(--fg);padding:110px 40px">
+  <section class="lbn-sec" id="clube" data-screen-label="Clube dos Libertos" style="background:var(--bg3);color:var(--fg)">
     <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:70px;align-items:center">
-      <div style="background:#0A0A0A;padding:60px 48px;display:flex;flex-direction:column;gap:32px">
+      <div class="lbn-clube-card">
         <img src="/imagens-e-documentacao/imagens/assets/clube-logo-branco.png" alt="Clube dos Libertos" style="width:min(100%,340px);display:block">
         <div style="display:flex;align-items:center;gap:14px;padding-top:24px;border-top:1px solid #2A2724">
           <img src="/imagens-e-documentacao/imagens/assets/sol-laranja.svg" alt="" style="width:26px;height:26px;display:block;flex:none">
@@ -193,80 +190,123 @@ button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;co
       </div>
       <div>
         <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>04</span><span style="color:var(--fg)">Clube dos Libertos</span></div>
-        <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Nosso espaço de letramento racial e aquilombamento</h2>
+        <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Nosso espaço de letramento racial e aquilombamento</h2>
         <p style="margin:28px 0 0;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">O Clube dos Libertos é a frente da Libertos Black Network dedicada ao letramento racial e ao aquilombamento: grupos de estudo, ciclos de leitura e rodas de conversa onde estudantes negros se encontram, se fortalecem e pensam juntos a sua permanência na universidade.</p>
       </div>
     </div>
   </section>
 
-  <section id="empresas" data-screen-label="Para empresas" style="background:#FF4B0F;color:#0A0A0A;padding:110px 40px">
+  <section class="lbn-sec" id="empresas" data-screen-label="Para empresas" style="background:#FF4B0F;color:#0A0A0A">
     <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:60px;align-items:end">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:60px;align-items:end">
         <div>
           <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase"><span>05</span><span>Para empresas</span></div>
-          <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(34px,4.4vw,56px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Diversidade que começa antes da vaga abrir</h2>
+          <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Diversidade que começa antes da vaga abrir</h2>
         </div>
-        <p style="margin:0;font-size:20px;line-height:1.6;text-wrap:pretty">Empresas que querem conhecer talentos negros do Nordeste encontram aqui uma base real de estudantes e profissionais, e um espaço para se apresentar antes do processo seletivo.</p>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <p style="margin:0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 106;font-weight:800;font-size:clamp(19px,1.7vw,23px);line-height:1.15;letter-spacing:-0.02em;text-wrap:balance">Conversa direta com universitários negros de todo o Nordeste.</p>
+          <p style="margin:0;font-size:20px;line-height:1.6;text-wrap:pretty">Empresas que querem conhecer talentos negros do Nordeste encontram aqui uma base real de estudantes e profissionais, e um espaço para se apresentar antes do processo seletivo.</p>
+        </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2px;background:#0A0A0A">
-        <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
-          <img src="/imagens-e-documentacao/imagens/assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
-          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Patrocínio do Encontro</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:2px;background:#0A0A0A">
+        <div class="lbn-offer">
+          <span class="lbn-sol" aria-hidden="true"></span>
+          <div class="lbn-offer-title">Patrocínio do Encontro</div>
           <div style="font-size:16px;line-height:1.55">Presença de marca no principal encontro de carreira negra do Nordeste.</div>
         </div>
-        <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
-          <img src="/imagens-e-documentacao/imagens/assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
-          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Mesa com profissionais</div>
-          <div style="font-size:16px;line-height:1.55">Seus times conversando diretamente com estudantes por área de carreira.</div>
+        <div class="lbn-offer">
+          <span class="lbn-sol" aria-hidden="true"></span>
+          <div class="lbn-offer-title">Programa de Voluntariado Corporativo</div>
+          <div style="font-size:16px;line-height:1.55">Seus profissionais se inscrevem e fazem sessões de mentoria com universitários negros de todo o Nordeste.</div>
         </div>
-        <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
-          <img src="/imagens-e-documentacao/imagens/assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
-          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Divulgação de vagas</div>
-          <div style="font-size:16px;line-height:1.55">Oportunidades circulando dentro da rede, para quem já está em contato com ela.</div>
+        <div class="lbn-offer">
+          <span class="lbn-sol" aria-hidden="true"></span>
+          <div class="lbn-offer-title">Banco de Talentos</div>
+          <div style="font-size:16px;line-height:1.55">Acesso aos perfis dos inscritos, com autorização, de cursos de várias áreas e com os interesses de cada um.</div>
         </div>
-        <div style="background:#FF4B0F;padding:34px 30px;display:flex;flex-direction:column;gap:12px">
-          <img src="/imagens-e-documentacao/imagens/assets/sol-preto.svg" alt="" style="width:38px;height:38px;display:block">
-          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-0.02em">Métricas ESG mensuráveis</div>
-          <div style="font-size:16px;line-height:1.55">Dados concretos de alcance e engajamento para relatar no pilar social da sua companhia.</div>
+        <div class="lbn-offer">
+          <span class="lbn-sol" aria-hidden="true"></span>
+          <div class="lbn-offer-title">Divulgação de vagas</div>
+          <div style="font-size:16px;line-height:1.55">Suas oportunidades divulgadas na nossa comunidade e na nossa newsletter.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contato" data-screen-label="Contato" style="background:var(--bg1);color:var(--fg);padding:110px 40px;position:relative;overflow:hidden">
+  <section class="lbn-sec" id="apoie" data-screen-label="Apoie" style="background:var(--bg1);color:var(--fg);position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background-image:var(--tile);background-size:170px 170px;opacity:0.04"></div>
-    <div style="position:relative;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:70px;align-items:start">
+    <div style="position:relative;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:70px;align-items:start">
       <div>
-        <h2 style="margin:0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(40px,6vw,76px);line-height:0.96;letter-spacing:-0.035em;text-transform:uppercase;text-wrap:balance">Ninguém entra sozinho na sala</h2>
-        <p style="margin:32px 0 0;max-width:520px;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Se você quer viver a universidade indo além da sala de aula, esse espaço também é seu.</p>
+        <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>06</span><span style="color:var(--fg)">Apoie</span></div>
+        <h2 style="margin:24px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(26px,2.8vw,38px);line-height:1;letter-spacing:-0.03em;text-transform:uppercase;text-wrap:balance">Ninguém entra sozinho na sala</h2>
+        <p style="margin:32px 0 0;max-width:520px;font-size:20px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Se você quer viver a universidade indo além da sala de aula, compartilhar o seu caminho ou trazer a sua empresa para perto da rede, esse espaço também é seu. Preencha os campos e a gente responde rápido.</p>
+        <p style="margin:24px 0 0;max-width:520px;font-size:17px;line-height:1.6;color:var(--fg3)">Prefere falar direto? <a href="mailto:libertosblacknetwork@gmail.com" class="lbn-link">libertosblacknetwork@gmail.com</a></p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:2px;background:var(--line)">
-        <a href="https://forms.gle/o7Xz1uMxWEaXUTqD9" target="_blank" rel="noopener" style="background:var(--card);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;text-decoration:none">
-          <span style="display:flex;flex-direction:column;gap:7px">
-            <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:24px;letter-spacing:-0.02em;color:var(--fg)">Sou universitário</span>
-            <span style="font-size:16px;line-height:1.5;color:var(--fg3)">Entre na rede e participe das trocas</span>
-          </span>
-          <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:26px;color:var(--accent);flex:none">&rarr;</span>
-        </a>
-        <a href="https://forms.gle/HBGDYFMSejqq1oXt9" target="_blank" rel="noopener" style="background:var(--card);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;text-decoration:none">
-          <span style="display:flex;flex-direction:column;gap:7px">
-            <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:24px;letter-spacing:-0.02em;color:var(--fg)">Sou profissional</span>
-            <span style="font-size:16px;line-height:1.5;color:var(--fg3)">Compartilhe seu caminho com quem está começando</span>
-          </span>
-          <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:26px;color:var(--accent);flex:none">&rarr;</span>
-        </a>
-        <button type="button" onclick="lbnOpenModal()" style="background:var(--card);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;text-align:left;border:0;width:100%;cursor:pointer;font-family:inherit">
-          <span style="display:flex;flex-direction:column;gap:7px">
-            <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:24px;letter-spacing:-0.02em;color:var(--fg)">Represento uma empresa</span>
-            <span style="font-size:16px;line-height:1.5;color:var(--fg3)">Fale com a gente sobre parceria e patrocínio</span>
-          </span>
-          <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:26px;color:var(--accent);flex:none">&rarr;</span>
-        </button>
+      <div class="lbn-form-wrap">
+        <div class="lbn-tabs" role="tablist" aria-label="Tipo de apoio">
+          <button type="button" role="tab" id="tab-empresa" aria-controls="form-empresa" aria-selected="true" onclick="lbnTab('empresa')">Sou empresa e quero apoiar</button>
+          <button type="button" role="tab" id="tab-pessoa" aria-controls="form-pessoa" aria-selected="false" onclick="lbnTab('pessoa')">Sou pessoa física e quero fazer parte</button>
+        </div>
+
+        <form id="form-empresa" class="lbn-form" role="tabpanel" aria-labelledby="tab-empresa" novalidate>
+          <input type="hidden" name="tipo" value="empresa">
+          <input type="text" name="site" class="lbn-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="lbn-grid2">
+            <label class="lbn-field"><span>Nome da empresa *</span><input type="text" name="empresa" required maxlength="120" autocomplete="organization"></label>
+            <label class="lbn-field"><span>Seu nome *</span><input type="text" name="nome" required maxlength="120" autocomplete="name"></label>
+            <label class="lbn-field"><span>Cargo</span><input type="text" name="cargo" maxlength="120" autocomplete="organization-title"></label>
+            <label class="lbn-field"><span>Celular</span><input type="tel" name="celular" maxlength="20" placeholder="(00) 0 0000-0000" autocomplete="tel"></label>
+          </div>
+          <label class="lbn-field"><span>E-mail corporativo *</span><input type="email" name="email" required maxlength="160" placeholder="exemplo@empresa.com" autocomplete="email"></label>
+          <fieldset class="lbn-fieldset">
+            <legend>Tenho interesse em</legend>
+            <div class="lbn-checks">
+              <label class="lbn-check"><input type="checkbox" name="interesse" value="Patrocínio do Encontro"><span>Patrocínio do Encontro</span></label>
+              <label class="lbn-check"><input type="checkbox" name="interesse" value="Programa de Voluntariado Corporativo"><span>Programa de Voluntariado Corporativo</span></label>
+              <label class="lbn-check"><input type="checkbox" name="interesse" value="Banco de Talentos"><span>Banco de Talentos</span></label>
+              <label class="lbn-check"><input type="checkbox" name="interesse" value="Divulgação de vagas"><span>Divulgação de vagas</span></label>
+            </div>
+          </fieldset>
+          <label class="lbn-field"><span>Mensagem</span><textarea name="mensagem" rows="4" maxlength="2000" placeholder="Conte um pouco sobre a sua empresa e o que vocês buscam."></textarea></label>
+          <label class="lbn-check lbn-consent"><input type="checkbox" name="consentimento" value="sim" required><span>Autorizo a Libertos Black Network a usar estes dados para entrar em contato comigo. *</span></label>
+          <button type="submit" class="lbn-btn lbn-submit">Quero apoiar</button>
+          <p class="lbn-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <form id="form-pessoa" class="lbn-form" role="tabpanel" aria-labelledby="tab-pessoa" novalidate hidden>
+          <input type="hidden" name="tipo" value="pessoa">
+          <input type="text" name="site" class="lbn-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="lbn-grid2">
+            <label class="lbn-field"><span>Nome completo *</span><input type="text" name="nome" required maxlength="120" autocomplete="name"></label>
+            <label class="lbn-field"><span>Celular</span><input type="tel" name="celular" maxlength="20" placeholder="(00) 0 0000-0000" autocomplete="tel"></label>
+          </div>
+          <label class="lbn-field"><span>E-mail *</span><input type="email" name="email" required maxlength="160" placeholder="exemplo@email.com" autocomplete="email"></label>
+          <div class="lbn-grid2">
+            <label class="lbn-field"><span>Eu sou *</span><select name="perfil" required><option value="">Selecione</option><option>Universitário(a)</option><option>Profissional</option><option>Outro</option></select></label>
+            <label class="lbn-field"><span>Estado *</span><select name="estado" required><option value="">Selecione</option><option>AL</option><option>BA</option><option>CE</option><option>MA</option><option>PB</option><option>PE</option><option>PI</option><option>RN</option><option>SE</option><option>AC</option><option>AP</option><option>AM</option><option>PA</option><option>RO</option><option>RR</option><option>TO</option><option>DF</option><option>GO</option><option>MT</option><option>MS</option><option>ES</option><option>MG</option><option>RJ</option><option>SP</option><option>PR</option><option>RS</option><option>SC</option></select></label>
+            <label class="lbn-field"><span>Universidade ou empresa</span><input type="text" name="instituicao" maxlength="120"></label>
+            <label class="lbn-field"><span>Curso ou área de atuação</span><input type="text" name="area" maxlength="120"></label>
+          </div>
+          <fieldset class="lbn-fieldset">
+            <legend>Quero</legend>
+            <div class="lbn-checks">
+              <label class="lbn-check"><input type="checkbox" name="participacao" value="Entrar na rede"><span>Entrar na rede</span></label>
+              <label class="lbn-check"><input type="checkbox" name="participacao" value="Ser mentor(a)"><span>Ser mentor(a)</span></label>
+              <label class="lbn-check"><input type="checkbox" name="participacao" value="Ser voluntário(a) no Encontro"><span>Ser voluntário(a) no Encontro</span></label>
+              <label class="lbn-check"><input type="checkbox" name="participacao" value="Receber a newsletter"><span>Receber a newsletter</span></label>
+            </div>
+          </fieldset>
+          <label class="lbn-field"><span>Mensagem</span><textarea name="mensagem" rows="4" maxlength="2000" placeholder="Este é o seu espaço. Conte o que você busca ou como quer contribuir."></textarea></label>
+          <label class="lbn-check lbn-consent"><input type="checkbox" name="consentimento" value="sim" required><span>Autorizo a Libertos Black Network a usar estes dados para entrar em contato comigo. *</span></label>
+          <label class="lbn-check lbn-consent"><input type="checkbox" name="banco_talentos" value="sim"><span>Autorizo compartilhar meu perfil com empresas parceiras pelo Banco de Talentos.</span></label>
+          <button type="submit" class="lbn-btn lbn-submit">Quero fazer parte</button>
+          <p class="lbn-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
 
-  <footer data-screen-label="Rodapé" style="background:var(--bg1);color:var(--fg);border-top:1px solid var(--hairline);padding:56px 40px">
+  <footer class="lbn-footer" data-screen-label="Rodapé">
     <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:18px">
         <img src="/imagens-e-documentacao/imagens/assets/sol-laranja.svg" alt="" style="width:46px;height:46px;display:block;flex:none">
@@ -275,29 +315,22 @@ button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;co
           <div style="margin-top:4px;font-family:Archivo,sans-serif;font-weight:700;font-size:9px;letter-spacing:0.19em;color:var(--accent-text);white-space:nowrap">BLACK NETWORK</div>
         </div>
       </div>
-      <div style="display:flex;gap:28px;flex-wrap:wrap;font-family:Archivo,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.16em;text-transform:uppercase">
-        <a href="https://www.instagram.com/libertosblacknetwork/" target="_blank" rel="noopener" style="color:var(--fg2)">Instagram</a>
-        <a href="https://www.linkedin.com/company/libertos-black-network/" target="_blank" rel="noopener" style="color:var(--fg2)">LinkedIn</a>
-        <a href="mailto:libertosblacknetwork@gmail.com" style="color:var(--fg2)">libertosblacknetwork@gmail.com</a>
+      <div class="lbn-foot-links">
+        <a href="https://www.instagram.com/libertosblacknetwork/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/libertos-black-network/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:libertosblacknetwork@gmail.com">libertosblacknetwork@gmail.com</a>
       </div>
     </div>
   </footer>
-
-  <div id="lbn-modal" onclick="lbnCloseModal()" style="position:fixed;inset:0;z-index:100;background:rgba(10,10,10,0.72);display:none;align-items:center;justify-content:center;padding:32px">
-      <div onclick="event.stopPropagation()" role="dialog" aria-modal="true" style="background:var(--bg1);border:2px solid var(--accent);max-width:520px;width:100%;padding:48px 44px;display:flex;flex-direction:column;gap:24px;position:relative">
-        <button type="button" onclick="lbnCloseModal()" aria-label="Fechar" style="position:absolute;top:14px;right:14px;width:36px;height:36px;padding:0;border:0;background:transparent;color:var(--fg3);font-size:26px;line-height:1;cursor:pointer;font-family:inherit">&times;</button>
-        <img src="/imagens-e-documentacao/imagens/assets/sol-laranja.svg" alt="" style="width:52px;height:52px;display:block">
-        <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:32px;line-height:1.05;letter-spacing:-0.025em;color:var(--fg);text-wrap:balance">Ficamos muito felizes com o seu interesse</div>
-        <p style="margin:0;font-size:18px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Entre em contato pelo nosso e-mail e respondemos rapidamente.</p>
-        <a href="mailto:libertosblacknetwork@gmail.com" style="background:var(--accent);color:var(--on-accent);padding:18px 24px;font-family:Archivo,sans-serif;font-weight:800;font-size:16px;letter-spacing:0.02em;text-align:center;word-break:break-word">libertosblacknetwork@gmail.com</a>
-      </div>
-    </div>
 
 </div>
 
 <script>
 (function(){
   var KEY='lbn-site-theme';
+  // URL do app da web do Google Apps Script (SCRIPT/formulario-apoie.gs). Vazio = abre o e-mail como alternativa.
+  var FORM_ENDPOINT='';
+  var EMAIL='libertosblacknetwork@gmail.com';
   function apply(t){
     document.getElementById('lbn-root').setAttribute('data-lbn-theme',t);
     document.documentElement.style.background = t==='dark' ? '#0A0A0A' : '#FFFFFF';
@@ -308,9 +341,52 @@ button[onclick="lbnToggleTheme()"]:hover{border-color:var(--accent)!important;co
     apply(next);
     try{localStorage.setItem(KEY,next);}catch(e){}
   };
-  window.lbnOpenModal=function(){document.getElementById('lbn-modal').style.display='flex';};
-  window.lbnCloseModal=function(){document.getElementById('lbn-modal').style.display='none';};
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.lbnCloseModal();});
+  window.lbnTab=function(which){
+    ['empresa','pessoa'].forEach(function(k){
+      var on=k===which;
+      document.getElementById('tab-'+k).setAttribute('aria-selected',on?'true':'false');
+      document.getElementById('form-'+k).hidden=!on;
+    });
+  };
+  function summary(fd){
+    var lines=[];
+    fd.forEach(function(v,k){ if(k!=='site'&&v) lines.push(k+': '+v); });
+    return lines.join('\n');
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.lbn-form'),function(form){
+    var status=form.querySelector('.lbn-status');
+    var btn=form.querySelector('.lbn-submit');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      status.className='lbn-status';
+      if(!form.checkValidity()){
+        var bad=form.querySelector(':invalid');
+        status.textContent='Confira os campos obrigatórios marcados com *.';
+        status.classList.add('is-error');
+        if(bad) bad.focus();
+        return;
+      }
+      var fd=new FormData(form);
+      if(fd.get('site')) return;
+      if(!FORM_ENDPOINT){
+        var assunto=fd.get('tipo')==='empresa'?'Quero apoiar a Libertos Black Network':'Quero fazer parte da Libertos Black Network';
+        window.location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent(assunto)+'&body='+encodeURIComponent(summary(fd));
+        return;
+      }
+      btn.disabled=true; status.textContent='Enviando...';
+      fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams(fd)})
+        .then(function(){
+          form.reset();
+          status.textContent='Recebemos o seu contato. Obrigado! Respondemos em breve.';
+          status.classList.add('is-ok');
+        })
+        .catch(function(){
+          status.textContent='Não conseguimos enviar agora. Tente de novo ou escreva para '+EMAIL+'.';
+          status.classList.add('is-error');
+        })
+        .then(function(){ btn.disabled=false; });
+    });
+  });
   var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
   apply(saved==='dark'?'dark':'light');
 })();
