@@ -255,7 +255,7 @@ a:hover { color:var(--accent-text) }
 
 /* Formulário Apoie: título e legenda lado a lado, formulário embaixo */
 .lbn-apoie-grid { position:relative; max-width:880px; margin:0 auto; display:flex; flex-direction:column; gap:40px }
-.lbn-apoie-head { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:20px 40px; align-items:end }
+.lbn-apoie-head { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:20px 40px; align-items:start }
 .lbn-form-wrap { background:var(--card); border:1px solid var(--line) }
 .lbn-tabs { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--line) }
 .lbn-tabs button {
