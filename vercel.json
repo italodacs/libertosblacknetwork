@@ -1,14 +1,21 @@
 {
   "version": 2,
-  "cleanUrls": true,
   "rewrites": [
     {
       "source": "/",
       "destination": "/HTML/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/HTML",
+      "destination": "/",
+      "permanent": true
     },
     {
-      "source": "/((?!HTML|CSS|SCRIPT|imagens-e-documentacao).*)",
-      "destination": "/HTML/index.html"
+      "source": "/HTML/index.html",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
