@@ -254,8 +254,8 @@ a:hover { color:var(--accent-text) }
 .lbn-offer:hover .lbn-sol { transform:rotate(30deg); transition:transform .4s ease }
 
 /* Formulário Apoie: título e legenda lado a lado, formulário embaixo */
-.lbn-apoie-grid { position:relative; max-width:1240px; margin:0 auto; display:flex; flex-direction:column; gap:40px }
-.lbn-apoie-head { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:24px 56px; align-items:end }
+.lbn-apoie-grid { position:relative; max-width:880px; margin:0 auto; display:flex; flex-direction:column; gap:40px }
+.lbn-apoie-head { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:20px 40px; align-items:end }
 .lbn-form-wrap { background:var(--card); border:1px solid var(--line) }
 .lbn-tabs { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--line) }
 .lbn-tabs button {
@@ -285,7 +285,6 @@ a:hover { color:var(--accent-text) }
 .lbn-fieldset legend { padding:0; margin-bottom:12px }
 .lbn-checks { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px }
 .lbn-grid4 { grid-template-columns:repeat(2,minmax(0,1fr)) }
-@media (min-width:1000px) { .lbn-checks, .lbn-grid4 { grid-template-columns:repeat(4,minmax(0,1fr)) } }
 @media (max-width:520px) { .lbn-grid4 { grid-template-columns:1fr } }
 @media (max-width:520px) { .lbn-checks { grid-template-columns:1fr } }
 .lbn-check { display:flex; align-items:flex-start; gap:12px; cursor:pointer; font-size:16px; line-height:1.45; color:var(--fg) }
