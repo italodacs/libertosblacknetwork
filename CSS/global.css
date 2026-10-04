@@ -238,6 +238,13 @@ a:hover { color:var(--accent-text) }
 .lbn-clube-card { background:#0A0A0A; padding:20px 24px; display:inline-block; line-height:0 }
 .lbn-clube-card img { width:240px; max-width:100%; display:block }
 
+/* Encontro: legenda logo ao lado do título */
+.lbn-encontro-head { display:grid; grid-template-columns:auto minmax(0,560px); gap:56px; align-items:center; justify-content:start }
+
+/* Trajetória e Encontro dividem o mesmo fundo: respiro menor entre os dois */
+#trajetoria.lbn-sec { padding-bottom:48px }
+#encontro.lbn-sec { padding-top:48px }
+
 /* Malha de sol contínua atrás de Trajetória + Encontro */
 .lbn-tiled { position:relative; background:var(--bg1); overflow:hidden }
 .lbn-tiled::before {
@@ -354,6 +361,8 @@ a:hover { color:var(--accent-text) }
 
 @media (max-width:760px) {
   .lbn-sec { padding:56px 20px }
+  #trajetoria.lbn-sec { padding-bottom:32px }
+  #encontro.lbn-sec { padding-top:32px }
   #empresas.lbn-sec { padding-top:48px }
   .lbn-header-in { padding:10px 20px }
   .lbn-logo { gap:12px }
@@ -377,6 +386,7 @@ a:hover { color:var(--accent-text) }
 .lbn-js .lbn-card.lbn-reveal, .lbn-js .lbn-offer.lbn-reveal { transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), color .2s ease, background-color .2s ease, box-shadow .2s ease }
 
 @media (max-width:900px) {
+  .lbn-encontro-head { grid-template-columns:1fr; gap:24px }
   .lbn-foot-grid { grid-template-columns:1fr 1fr; gap:40px 32px }
   .lbn-foot-brand { grid-column:1 / -1 }
   .lbn-clube-row { grid-template-columns:1fr; gap:24px }
