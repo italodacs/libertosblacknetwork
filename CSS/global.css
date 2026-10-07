@@ -245,12 +245,8 @@ a:hover { color:var(--accent-text) }
   .lbn-event-ctas .lbn-btn { flex:1 1 100%; text-align:center }
 }
 
-/* Banco de Talentos: botão ao lado do selo do Encontro e no bloco do evento */
-.lbn-hero-top { display:flex; align-items:stretch; gap:12px; flex-wrap:wrap }
-.lbn-hero-top .lbn-invite { align-self:auto }
+/* Banco de Talentos: botão ao lado da inscrição, no bloco do evento */
 .lbn-talent-btn { font-size:13px; letter-spacing:0.1em; text-align:center }
-.lbn-hero-top .lbn-talent-btn { padding:14px 22px }
-@media (max-width:760px) { .lbn-hero-top .lbn-talent-btn { flex:1 1 100% } }
 
 /* Página do Banco de Talentos (HTML/talentos.html) */
 .lbn-form-step {
