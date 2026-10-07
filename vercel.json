@@ -4,6 +4,10 @@
     {
       "source": "/",
       "destination": "/HTML/index.html"
+    },
+    {
+      "source": "/talentos",
+      "destination": "/HTML/talentos.html"
     }
   ],
   "redirects": [
@@ -15,6 +19,11 @@
     {
       "source": "/HTML/index.html",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/HTML/talentos.html",
+      "destination": "/talentos",
       "permanent": true
     }
   ]

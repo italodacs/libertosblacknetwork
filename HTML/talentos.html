@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banco de Talentos · Libertos Black Network</title>
+<meta name="description" content="Cadastre-se no Banco de Talentos do Encontro Libertos Black Network 2026 e chegue às empresas parceiras do evento.">
+<meta property="og:title" content="Banco de Talentos · Libertos Black Network">
+<meta property="og:description" content="Cadastre-se no Banco de Talentos do Encontro 2026.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="/imagens-e-documentacao/imagens/assets/sol-laranja.svg">
+<link rel="stylesheet" href="/CSS/global.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="lbn-root" data-lbn-theme="light" id="lbn-root">
+  <header class="lbn-header" data-screen-label="Nav">
+    <div class="lbn-header-in">
+      <a href="/" class="lbn-logo" aria-label="Libertos Black Network, voltar ao site">
+        <img src="/imagens-e-documentacao/imagens/assets/sol-laranja.svg" alt="" style="width:40px;height:40px;display:block;flex:none">
+        <span style="display:flex;flex-direction:column">
+          <span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 115;font-weight:800;font-size:19px;line-height:0.9;letter-spacing:-0.02em;color:var(--fg)">LIBERTOS</span>
+          <span style="margin-top:3px;font-family:Archivo,sans-serif;font-weight:700;font-size:8px;letter-spacing:0.19em;color:var(--accent-text);white-space:nowrap">BLACK NETWORK</span>
+        </span>
+      </a>
+      <div class="lbn-actions" style="margin-left:auto">
+        <a href="/#encontro" class="lbn-btn lbn-btn-sm lbn-btn-ghost">Sobre o Encontro</a>
+        <button type="button" class="lbn-theme" onclick="lbnToggleTheme()" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+          <svg data-icon="moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+          <svg data-icon="sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="lbn-sec lbn-tiled" id="talentos" data-screen-label="Banco de Talentos" style="color:var(--fg)">
+    <div class="lbn-apoie-grid">
+      <div class="lbn-apoie-head">
+        <div>
+          <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>Encontro 2026</span><span style="color:var(--fg)">Banco de Talentos</span></div>
+          <h1 style="margin:16px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(26px,2.8vw,38px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Seu talento na mesa das empresas parceiras</h1>
+        </div>
+        <div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:var(--fg2);text-wrap:pretty">O Banco de Talentos reúne universitários negros que vão ao Encontro Libertos Black Network, em Salvador, no dia 18 de novembro. As empresas parceiras do evento acessam esses perfis para oportunidades de estágio e emprego.</p>
+          <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:var(--fg3)">Leva uns 3 minutos. Tenha o seu currículo em PDF ou Word por perto.</p>
+        </div>
+      </div>
+
+      <div class="lbn-form-wrap">
+        <form id="form-talento" class="lbn-form" novalidate>
+          <input type="hidden" name="tipo" value="talento">
+          <input type="text" name="site" class="lbn-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <h2 class="lbn-form-step">Sobre você</h2>
+          <label class="lbn-field"><span>Nome completo *</span><input type="text" name="nome" required maxlength="120" autocomplete="name"></label>
+          <div class="lbn-grid2 lbn-grid4">
+            <label class="lbn-field"><span>E-mail *</span><input type="email" name="email" required maxlength="160" placeholder="exemplo@email.com" autocomplete="email"></label>
+            <label class="lbn-field"><span>Celular / WhatsApp *</span><input type="tel" name="celular" required maxlength="20" placeholder="(00) 0 0000-0000" autocomplete="tel"></label>
+            <label class="lbn-field"><span>Idade *</span><input type="number" name="idade" required min="14" max="99" inputmode="numeric"></label>
+            <label class="lbn-field"><span>LinkedIn</span><input type="url" name="linkedin" maxlength="200" placeholder="https://linkedin.com/in/..." autocomplete="url"></label>
+            <label class="lbn-field"><span>Identidade de gênero *</span><select name="genero" required><option value="">Selecione</option><option>Mulher</option><option>Homem</option><option>Pessoa não binária</option><option>Outra</option><option>Prefiro não informar</option></select></label>
+            <label class="lbn-field"><span>Raça ou cor *</span><select name="raca" required><option value="">Selecione</option><option>Preta</option><option>Parda</option><option>Branca</option><option>Amarela</option><option>Indígena</option><option>Prefiro não informar</option></select></label>
+            <label class="lbn-field"><span>Estado *</span><select name="estado" required><option value="">Selecione</option><option>AL</option><option>BA</option><option>CE</option><option>MA</option><option>PB</option><option>PE</option><option>PI</option><option>RN</option><option>SE</option><option>AC</option><option>AP</option><option>AM</option><option>PA</option><option>RO</option><option>RR</option><option>TO</option><option>DF</option><option>GO</option><option>MT</option><option>MS</option><option>ES</option><option>MG</option><option>RJ</option><option>SP</option><option>PR</option><option>RS</option><option>SC</option></select></label>
+            <label class="lbn-field"><span>Cidade *</span><input type="text" name="cidade" required maxlength="80" autocomplete="address-level2"></label>
+          </div>
+
+          <h2 class="lbn-form-step">Formação</h2>
+          <label class="lbn-field"><span>Instituição de ensino *</span><input type="text" name="instituicao" required maxlength="120" placeholder="Ex.: UFBA, UNEB, IFBA"></label>
+          <div class="lbn-grid2 lbn-grid4">
+            <label class="lbn-field"><span>Curso *</span><input type="text" name="curso" required maxlength="120"></label>
+            <label class="lbn-field"><span>Semestre atual *</span><select name="semestre" required><option value="">Selecione</option><option>1º</option><option>2º</option><option>3º</option><option>4º</option><option>5º</option><option>6º</option><option>7º</option><option>8º</option><option>9º</option><option>10º</option><option>Acima do 10º</option><option>Já me formei</option></select></label>
+            <label class="lbn-field"><span>Previsão de formatura *</span><select name="formatura" required><option value="">Selecione</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031 ou depois</option><option>Já me formei</option></select></label>
+          </div>
+
+          <fieldset class="lbn-fieldset" id="areas">
+            <legend>Áreas de interesse * <small>(marque uma ou mais)</small></legend>
+            <div class="lbn-checks">
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Tecnologia"><span>Tecnologia</span></label>
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Dados"><span>Dados</span></label>
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Marketing"><span>Marketing</span></label>
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Comunicação"><span>Comunicação</span></label>
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Finanças"><span>Finanças</span></label>
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Administração"><span>Administração</span></label>
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Direito"><span>Direito</span></label>
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Engenharia"><span>Engenharia</span></label>
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Saúde"><span>Saúde</span></label>
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Recursos Humanos"><span>Recursos Humanos</span></label>
+              <label class="lbn-check"><input type="checkbox" name="areas" value="Outra"><span>Outra</span></label>
+            </div>
+          </fieldset>
+
+          <h2 class="lbn-form-step">Currículo</h2>
+          <label class="lbn-field lbn-file"><span>Envie seu currículo * <small>(PDF ou Word, até 5 MB)</small></span><input type="file" name="curriculo" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"></label>
+
+          <label class="lbn-check lbn-consent"><input type="checkbox" name="consentimento" value="sim" required><span>Autorizo a Libertos Black Network a guardar estes dados, incluindo identidade de gênero e raça ou cor, e a compartilhar meu perfil e currículo com as empresas parceiras do Encontro para oportunidades de estágio e emprego. *</span></label>
+          <button type="submit" class="lbn-btn lbn-submit">Quero entrar no Banco de Talentos</button>
+          <p class="lbn-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="lbn-footer lbn-footer-mini" data-screen-label="Rodapé">
+    <div class="lbn-foot-bottom">
+      <span>&copy; 2026 Libertos Black Network</span>
+      <a href="mailto:libertosblacknetwork@gmail.com">libertosblacknetwork@gmail.com</a>
+      <a href="/">Voltar ao site &rarr;</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var KEY='lbn-site-theme';
+  // Mesmo app da web do formulário Apoie (SCRIPT/formulario-apoie.gs), tipo "talento".
+  var FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbznGe6c_3L8BKpRxFM5vNY05kybhrTe9eu4c9JGkINVj1gbemjFc-zyFULFChqL_FMz8A/exec';
+  var EMAIL='libertosblacknetwork@gmail.com';
+  var MAX_BYTES=5*1024*1024;
+  var TYPES={pdf:'application/pdf',doc:'application/msword',docx:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'};
+  function apply(t){
+    document.getElementById('lbn-root').setAttribute('data-lbn-theme',t);
+    document.documentElement.style.background = t==='dark' ? '#0A0A0A' : '#FFFFFF';
+  }
+  window.lbnToggleTheme=function(){
+    var cur=document.getElementById('lbn-root').getAttribute('data-lbn-theme');
+    var next=cur==='light'?'dark':'light';
+    apply(next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+  };
+  var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
+  apply(saved==='dark'?'dark':'light');
+
+  var form=document.getElementById('form-talento');
+  var status=form.querySelector('.lbn-status');
+  var btn=form.querySelector('.lbn-submit');
+  var fileInput=form.querySelector('input[name="curriculo"]');
+  var firstArea=form.querySelector('input[name="areas"]');
+
+  function fail(msg,el){
+    status.textContent=msg;
+    status.className='lbn-status is-error';
+    if(el) el.focus();
+  }
+  // O navegador não sabe exigir "pelo menos uma" caixa marcada: a regra fica aqui.
+  function checkAreas(){
+    var ok=!!form.querySelector('input[name="areas"]:checked');
+    firstArea.setCustomValidity(ok?'':'Marque pelo menos uma área.');
+    return ok;
+  }
+  function fileType(file){
+    var ext=(file.name.split('.').pop()||'').toLowerCase();
+    return TYPES[ext]||'';
+  }
+  function checkFile(){
+    var file=fileInput.files[0];
+    var msg='';
+    if(file && !fileType(file)) msg='O currículo precisa ser PDF ou Word (.pdf, .doc, .docx).';
+    else if(file && file.size>MAX_BYTES) msg='O currículo passa de 5 MB. Tente exportar um PDF mais leve.';
+    fileInput.setCustomValidity(msg);
+    return msg;
+  }
+  form.addEventListener('change',function(e){
+    if(e.target.name==='areas') checkAreas();
+    if(e.target===fileInput){ var m=checkFile(); if(m) fail(m); else if(status.classList.contains('is-error')) status.textContent=''; }
+  });
+  function readBase64(file){
+    return new Promise(function(resolve,reject){
+      var r=new FileReader();
+      r.onload=function(){ resolve(String(r.result).split(',')[1]||''); };
+      r.onerror=function(){ reject(r.error); };
+      r.readAsDataURL(file);
+    });
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='lbn-status';
+    checkAreas();
+    var fileMsg=checkFile();
+    if(!form.checkValidity()){
+      var bad=form.querySelector('input:invalid, select:invalid, textarea:invalid');
+      if(bad===fileInput && fileMsg) return fail(fileMsg,bad);
+      if(bad===firstArea) return fail('Marque pelo menos uma área de interesse.',bad);
+      return fail('Confira os campos obrigatórios marcados com *.',bad);
+    }
+    var fd=new FormData(form);
+    if(fd.get('site')) return;
+    var file=fileInput.files[0];
+    fd.delete('curriculo');
+    btn.disabled=true; status.textContent='Enviando o seu cadastro...';
+    readBase64(file)
+      .then(function(b64){
+        fd.append('curriculo_b64',b64);
+        fd.append('curriculo_tipo',fileType(file));
+        return fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams(fd)});
+      })
+      .then(function(){
+        form.reset();
+        status.textContent='Cadastro recebido! Seu perfil já faz parte do Banco de Talentos do Encontro. Nos vemos em Salvador.';
+        status.className='lbn-status is-ok';
+      })
+      .catch(function(){
+        fail('Não conseguimos enviar agora. Tente de novo ou escreva para '+EMAIL+'.');
+      })
+      .then(function(){ btn.disabled=false; });
+  });
+})();
+</script>
+</body>
+</html>

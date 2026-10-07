@@ -239,7 +239,34 @@ a:hover { color:var(--accent-text) }
 .lbn-event-dl dd span { font-family:Luciole,sans-serif; font-weight:500; font-size:16px; letter-spacing:0; color:var(--fg2) }
 .lbn-event-dl dd a { color:inherit; text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:4px }
 .lbn-event-dl dd a:hover { color:var(--accent-text) }
-@media (max-width:760px) { .lbn-event-info .lbn-btn { flex:1 1 100%; text-align:center } }
+.lbn-event-ctas { display:flex; gap:12px; flex-wrap:wrap }
+@media (max-width:760px) {
+  .lbn-event-ctas { flex:1 1 100% }
+  .lbn-event-ctas .lbn-btn { flex:1 1 100%; text-align:center }
+}
+
+/* Banco de Talentos: botão ao lado do selo do Encontro e no bloco do evento */
+.lbn-hero-top { display:flex; align-items:stretch; gap:12px; flex-wrap:wrap }
+.lbn-hero-top .lbn-invite { align-self:auto }
+.lbn-talent-btn { font-size:13px; letter-spacing:0.1em; text-align:center }
+.lbn-hero-top .lbn-talent-btn { padding:14px 22px }
+@media (max-width:760px) { .lbn-hero-top .lbn-talent-btn { flex:1 1 100% } }
+
+/* Página do Banco de Talentos (HTML/talentos.html) */
+.lbn-form-step {
+  margin:12px 0 0; padding-top:20px; border-top:1px solid var(--line);
+  font-family:Archivo,sans-serif; font-weight:800; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent-text);
+}
+.lbn-form-step:first-of-type { margin-top:0; padding-top:0; border-top:0 }
+.lbn-field > span small, .lbn-fieldset legend small { font-family:Luciole,sans-serif; font-weight:400; letter-spacing:0; text-transform:none; font-size:13px; color:var(--fg3) }
+.lbn-file input { padding:12px 14px; border-style:dashed; cursor:pointer }
+.lbn-file input::file-selector-button {
+  margin-right:14px; padding:9px 16px; border:2px solid var(--accent); background:var(--accent); color:var(--on-accent); cursor:pointer;
+  font-family:Archivo,sans-serif; font-weight:800; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+}
+.lbn-footer-mini { padding-top:0 }
+.lbn-footer-mini .lbn-foot-bottom { margin-top:0 }
+#talentos.lbn-sec { min-height:calc(100vh - 200px) }
 
 /* Seções e cartões */
 .lbn-sec { padding:80px 40px }
