@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://libertosblacknetwork.com.br/sitemap.xml
