@@ -1,23 +1,20 @@
 /*----------------------------- Head e Body-------------------------------------------*/
-[data-icon] {
+:where(.lbn-root) [data-icon] {
   pointer-events: none;
-}
-
-button[onclick="lbnToggleTheme()"]:hover {
-  border-color: var(--accent) !important;
-  color: var(--accent) !important;
 }
 
 @font-face {
   font-family: 'Luciole';
-  src: url('../imagens-e-documentacao/documentacao/fonts/Luciole-Regular.ttf') format('truetype');
+  src: url('../fonts/Luciole-Regular.woff2') format('woff2'),
+       url('../imagens-e-documentacao/documentacao/fonts/Luciole-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Luciole';
-  src: url('../imagens-e-documentacao/documentacao/fonts/Luciole-Bold.ttf') format('truetype');
+  src: url('../fonts/Luciole-Bold.woff2') format('woff2'),
+       url('../imagens-e-documentacao/documentacao/fonts/Luciole-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
 }
@@ -57,13 +54,9 @@ body {
   background:var(--bg1)
 }
 
-a {
+:where(.lbn-root) a {
   color:var(--accent);
   text-decoration:none
-}
-
-a:hover{
-  color:var(--fg)
 }
 
 [data-lbn-theme="dark"] [data-icon="sun"] {
@@ -77,74 +70,7 @@ a:hover{
 /*----------------------------- Div do cabeçalho-------------------------------------------*/
 
 .lbn-root {
-  font-family:Luciole,sans-serif;
-  color:var(--fg);
-  background:var(--bg1)
-}
-
-nav-container {
-  max-width:1240px;
-  margin:0 auto;
-  padding:18px 40px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:32px;
-  flex-wrap:wrap
-}
-
-nav-container a {
-  display:flex;
-  align-items:center;
-  gap:16px;
-  text-decoration:none
-}
-
-nav-container a img {
-  width:40px;
-  height:40px;
-  display:block;
-  flex:none
-}
-
-nav-container a span {
-  display:flex;
-  flex-direction:column
-}
-
-nav-container a span:first-child {
-  font-family:Archivo,sans-serif;
-  font-variation-settings:'wdth' 115;
-  font-weight:800;
-  font-size:19px;
-  line-height:0.9;
-  letter-spacing:-0.02em;
-  color:var(--fg)
-}
-
-nav-container a span:last-child {
-  margin-top:3px;
-  font-family:Archivo,sans-serif;
-  font-weight:700;
-  font-size:8px;
-  letter-spacing:0.19em;
-  color:var(--accent-text);
-  white-space:nowrap
-}
-
-nav-container nav {
-  display:flex;
-  align-items:center;
-  gap:32px;
-  flex-wrap:wrap;
-  font-family:Archivo,sans-serif;
-  font-weight:600;
-  font-size:13px;
-  letter-spacing:0.14em;
-  text-transform:uppercase
-}
-
-lbn-root-container{
+  --control-border:var(--fg3);
   font-family:Luciole,sans-serif;
   color:var(--fg);
   background:var(--bg1)
@@ -156,6 +82,19 @@ lbn-root-container{
 
 .lbn-root :focus-visible { outline:3px solid var(--accent); outline-offset:3px }
 
+.lbn-skip-link {
+  position:fixed; top:12px; left:12px; z-index:100;
+  width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap;
+  background:var(--bg1); color:var(--fg); border:0;
+}
+.lbn-skip-link:focus {
+  width:auto; height:auto; max-width:calc(100% - 48px); padding:12px;
+  overflow:visible; clip-path:none; white-space:normal; border:2px solid var(--accent-text);
+  color:var(--fg);
+}
+#conteudo-principal { scroll-margin-top:124px }
+#conteudo-principal:focus { outline:none }
+
 .lbn-root section[id] { scroll-margin-top:84px }
 
 .lbn-root a,
@@ -164,24 +103,30 @@ lbn-root-container{
 .lbn-card-title,
 .lbn-offer { transition:color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease }
 
-a:hover { color:var(--accent-text) }
+:where(.lbn-root) a:hover { color:var(--accent-text) }
 
 .lbn-link { color:var(--accent-text); text-decoration:underline; text-underline-offset:3px }
 
 /* Cabeçalho */
 .lbn-header {
-  position:sticky; top:0; z-index:50;
+  position:relative; top:0; z-index:50;
   background:var(--nav-bg);
   border-bottom:1px solid var(--hairline);
   backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
 }
+/* Keep keyboard focus visible even when the wrapped header grows in height.
+   Browsers without :has keep the header in normal flow as a safe fallback. */
+@supports selector(:has(:focus-visible)) {
+  .lbn-root:not(:has(main :focus-visible, footer :focus-visible)) .lbn-header { position:sticky }
+}
 .lbn-header-in {
   max-width:1240px; margin:0 auto; padding:16px 40px;
-  display:flex; align-items:center; gap:32px;
+  display:flex; flex-wrap:wrap; align-items:center; gap:32px;
 }
 .lbn-logo { display:flex; align-items:center; gap:16px; flex:none }
 .lbn-links {
-  margin-left:auto; display:flex; align-items:center; gap:30px;
+  margin-left:auto; display:flex; flex:1 1 520px; min-width:0; max-width:100%;
+  flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:30px;
   font-family:Archivo,sans-serif; font-weight:600; font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
 }
 .lbn-links a { position:relative; color:var(--fg2); white-space:nowrap; padding:6px 0 }
@@ -338,6 +283,7 @@ a:hover { color:var(--accent-text) }
 /* Formulário Apoie: título e legenda lado a lado, formulário embaixo */
 .lbn-apoie-grid { position:relative; max-width:880px; margin:0 auto; display:flex; flex-direction:column; gap:40px }
 .lbn-apoie-head { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:20px 40px; align-items:start }
+.lbn-apoie-head .lbn-link { overflow-wrap:anywhere }
 .lbn-form-wrap { background:var(--card); border:1px solid var(--line) }
 .lbn-tabs { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--line) }
 .lbn-tabs button {
@@ -349,19 +295,20 @@ a:hover { color:var(--accent-text) }
 .lbn-tabs button[aria-selected="true"] { color:var(--fg); background:var(--bg1); box-shadow:inset 0 -3px 0 var(--accent) }
 .lbn-form { padding:28px 32px; display:flex; flex-direction:column; gap:16px }
 .lbn-form[hidden] { display:none }
+.lbn-form-controls { border:0; margin:0; padding:0; min-inline-size:0; display:flex; flex-direction:column; gap:16px }
 .lbn-grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:16px }
 .lbn-field { display:flex; flex-direction:column; gap:8px }
 .lbn-field > span, .lbn-fieldset legend {
   font-family:Archivo,sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg2);
 }
 .lbn-field input, .lbn-field select, .lbn-field textarea {
-  width:100%; box-sizing:border-box; padding:11px 14px; border:2px solid var(--line); border-radius:0;
+  width:100%; box-sizing:border-box; padding:11px 14px; border:2px solid var(--control-border); border-radius:0;
   background:var(--bg1); color:var(--fg); font:inherit; font-size:16px;
 }
 .lbn-field textarea { resize:vertical; min-height:84px }
 .lbn-field input::placeholder, .lbn-field textarea::placeholder { color:var(--fg3) }
 .lbn-field input:hover, .lbn-field select:hover, .lbn-field textarea:hover { border-color:var(--fg3) }
-.lbn-field input:focus, .lbn-field select:focus, .lbn-field textarea:focus { outline:none; border-color:var(--accent) }
+.lbn-field input:focus, .lbn-field select:focus, .lbn-field textarea:focus { outline:none; border-color:var(--accent-text) }
 .lbn-field:focus-within > span { color:var(--accent-text) }
 .lbn-fieldset { border:0; margin:0; padding:0; display:flex; flex-direction:column; gap:12px }
 .lbn-fieldset legend { padding:0; margin-bottom:12px }
@@ -424,7 +371,7 @@ a:hover { color:var(--accent-text) }
   .lbn-header-in { flex-wrap:wrap; row-gap:10px; padding:12px 32px }
   .lbn-actions { margin-left:auto }
   .lbn-links {
-    order:3; width:100%; margin:0; gap:26px;
+    order:3; width:100%; flex-basis:100%; flex-wrap:nowrap; justify-content:flex-start; margin:0; gap:26px;
     overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch;
     padding-top:10px; border-top:1px solid var(--hairline);
   }

@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Banco de Talentos · Libertos Black Network</title>
 <meta name="description" content="Cadastre-se no Banco de Talentos do Encontro Libertos Black Network, em Salvador, 18/11, e tenha seu perfil acessado pelas empresas parceiras.">
@@ -28,6 +29,7 @@
 </head>
 <body>
 <div class="lbn-root" data-lbn-theme="light" id="lbn-root">
+  <a class="lbn-skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
   <header class="lbn-header" data-screen-label="Nav">
     <div class="lbn-header-in">
       <a href="/" class="lbn-logo" aria-label="Libertos Black Network, voltar ao site">
@@ -39,7 +41,7 @@
       </a>
       <div class="lbn-actions" style="margin-left:auto">
         <a href="/#encontro" class="lbn-btn lbn-btn-sm lbn-btn-ghost">Sobre o Encontro</a>
-        <button type="button" class="lbn-theme" onclick="lbnToggleTheme()" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+        <button type="button" class="lbn-theme" data-theme-toggle aria-label="Alternar tema claro e escuro" title="Alternar tema">
           <svg data-icon="moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
           <svg data-icon="sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"></path></svg>
         </button>
@@ -47,6 +49,7 @@
     </div>
   </header>
 
+  <main id="conteudo-principal" tabindex="-1">
   <section class="lbn-sec lbn-tiled" id="talentos" data-screen-label="Banco de Talentos" style="color:var(--fg)">
     <div class="lbn-apoie-grid">
       <div class="lbn-apoie-head">
@@ -61,7 +64,9 @@
       </div>
 
       <div class="lbn-form-wrap">
-        <form id="form-talento" class="lbn-form" novalidate>
+        <form id="form-talento" class="lbn-form" novalidate method="post">
+          <p data-form-unavailable role="status">O formulário está indisponível no momento. Recarregue a página ou entre em contato por <a href="mailto:libertosblacknetwork@gmail.com">e-mail</a>.</p>
+          <fieldset class="lbn-form-controls" data-form-controls disabled aria-label="Dados do formulário">
           <input type="hidden" name="tipo" value="talento">
           <input type="text" name="site" class="lbn-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -108,11 +113,14 @@
 
           <label class="lbn-check lbn-consent"><input type="checkbox" name="consentimento" value="sim" required><span>Autorizo a Libertos Black Network a guardar estes dados, incluindo identidade de gênero e raça ou cor, e a compartilhar meu perfil e currículo com as empresas parceiras do Encontro para oportunidades de estágio e emprego. *</span></label>
           <button type="submit" class="lbn-btn lbn-submit">Quero entrar no Banco de Talentos</button>
+          </fieldset>
           <p class="lbn-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer class="lbn-footer lbn-footer-mini" data-screen-label="Rodapé">
     <div class="lbn-foot-bottom">
@@ -123,101 +131,8 @@
   </footer>
 </div>
 
-<script>
-(function(){
-  var KEY='lbn-site-theme';
-  // Mesmo app da web do formulário Apoie (SCRIPT/formulario-apoie.gs), tipo "talento".
-  var FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbwR0TIvqx3XPloLgPd8pa8uFwXVHzonjw02roO92YIEu397mCWQcnEGztMf0Hr-P2KKTQ/exec';
-  var EMAIL='libertosblacknetwork@gmail.com';
-  var MAX_BYTES=5*1024*1024;
-  var TYPES={pdf:'application/pdf',doc:'application/msword',docx:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'};
-  function apply(t){
-    document.getElementById('lbn-root').setAttribute('data-lbn-theme',t);
-    document.documentElement.style.background = t==='dark' ? '#0A0A0A' : '#FFFFFF';
-  }
-  window.lbnToggleTheme=function(){
-    var cur=document.getElementById('lbn-root').getAttribute('data-lbn-theme');
-    var next=cur==='light'?'dark':'light';
-    apply(next);
-    try{localStorage.setItem(KEY,next);}catch(e){}
-  };
-  var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
-  apply(saved==='dark'?'dark':'light');
-
-  var form=document.getElementById('form-talento');
-  var status=form.querySelector('.lbn-status');
-  var btn=form.querySelector('.lbn-submit');
-  var fileInput=form.querySelector('input[name="curriculo"]');
-  var firstArea=form.querySelector('input[name="areas"]');
-
-  function fail(msg,el){
-    status.textContent=msg;
-    status.className='lbn-status is-error';
-    if(el) el.focus();
-  }
-  // O navegador não sabe exigir "pelo menos uma" caixa marcada: a regra fica aqui.
-  function checkAreas(){
-    var ok=!!form.querySelector('input[name="areas"]:checked');
-    firstArea.setCustomValidity(ok?'':'Marque pelo menos uma área.');
-    return ok;
-  }
-  function fileType(file){
-    var ext=(file.name.split('.').pop()||'').toLowerCase();
-    return TYPES[ext]||'';
-  }
-  function checkFile(){
-    var file=fileInput.files[0];
-    var msg='';
-    if(file && !fileType(file)) msg='O currículo precisa ser PDF ou Word (.pdf, .doc, .docx).';
-    else if(file && file.size>MAX_BYTES) msg='O currículo passa de 5 MB. Tente exportar um PDF mais leve.';
-    fileInput.setCustomValidity(msg);
-    return msg;
-  }
-  form.addEventListener('change',function(e){
-    if(e.target.name==='areas') checkAreas();
-    if(e.target===fileInput){ var m=checkFile(); if(m) fail(m); else if(status.classList.contains('is-error')) status.textContent=''; }
-  });
-  function readBase64(file){
-    return new Promise(function(resolve,reject){
-      var r=new FileReader();
-      r.onload=function(){ resolve(String(r.result).split(',')[1]||''); };
-      r.onerror=function(){ reject(r.error); };
-      r.readAsDataURL(file);
-    });
-  }
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    status.className='lbn-status';
-    checkAreas();
-    var fileMsg=checkFile();
-    if(!form.checkValidity()){
-      var bad=form.querySelector('input:invalid, select:invalid, textarea:invalid');
-      if(bad===fileInput && fileMsg) return fail(fileMsg,bad);
-      if(bad===firstArea) return fail('Marque pelo menos uma área de interesse.',bad);
-      return fail('Confira os campos obrigatórios marcados com *.',bad);
-    }
-    var fd=new FormData(form);
-    if(fd.get('site')) return;
-    var file=fileInput.files[0];
-    fd.delete('curriculo');
-    btn.disabled=true; status.textContent='Enviando o seu cadastro...';
-    readBase64(file)
-      .then(function(b64){
-        fd.append('curriculo_b64',b64);
-        fd.append('curriculo_tipo',fileType(file));
-        return fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams(fd)});
-      })
-      .then(function(){
-        form.reset();
-        status.textContent='Cadastro recebido! Seu perfil já faz parte do Banco de Talentos do Encontro. Nos vemos em Salvador.';
-        status.className='lbn-status is-ok';
-      })
-      .catch(function(){
-        fail('Não conseguimos enviar agora. Tente de novo ou escreva para '+EMAIL+'.');
-      })
-      .then(function(){ btn.disabled=false; });
-  });
-})();
-</script>
+<script src="/SCRIPT/form-validation.js" defer></script>
+<script src="/SCRIPT/site.js" defer></script>
+<script src="/SCRIPT/talentos.js" defer></script>
 </body>
 </html>

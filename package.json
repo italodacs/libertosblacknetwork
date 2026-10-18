@@ -1,0 +1,20 @@
+{
+  "name": "libertosblacknetwork",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Site estático da Libertos Black Network; ferramentas apenas de desenvolvimento.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "check": "node scripts/check-site.cjs",
+    "test": "node --test tests/apps-script.test.cjs tests/site.test.cjs tests/form-validation.test.cjs",
+    "test:browser": "node tests/browser.test.cjs && node tests/form-safety.test.cjs && node tests/accessibility-regression.cjs",
+    "test:forms": "node tests/form-safety.test.cjs",
+    "test:accessibility": "node tests/accessibility-regression.cjs",
+    "verify": "npm run check && npm test && npm run test:browser",
+    "serve": "node scripts/serve.cjs"
+  },
+  "devDependencies": {
+    "axe-core": "4.14.0",
+    "playwright": "1.62.1"
+  }
+}

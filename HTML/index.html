@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Libertos Black Network</title>
 <meta name="description" content="Rede que conecta universitários negros do Nordeste a profissionais e empresas. Encontro 2026 em Salvador, 18/11: inscrições abertas e Banco de Talentos.">
@@ -30,6 +31,7 @@
 </head>
 <body>
 <div class="lbn-root" data-lbn-theme="light" id="lbn-root" >
+  <a class="lbn-skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
 
   <header class="lbn-header" data-screen-label="Nav">
     <div class="lbn-header-in">
@@ -49,7 +51,7 @@
       </nav>
       <div class="lbn-actions">
         <a href="#apoie" class="lbn-btn lbn-btn-sm">Apoie</a>
-        <button type="button" class="lbn-theme" onclick="lbnToggleTheme()" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+        <button type="button" class="lbn-theme" data-theme-toggle aria-label="Alternar tema claro e escuro" title="Alternar tema">
           <svg data-icon="moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
           <svg data-icon="sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"></path></svg>
         </button>
@@ -57,6 +59,7 @@
     </div>
   </header>
 
+  <main id="conteudo-principal" tabindex="-1">
   <section id="topo" data-screen-label="Hero" style="position:relative;background:var(--bg1);color:var(--fg);overflow:hidden">
     <div style="position:absolute;inset:0;background-image:var(--tile);background-size:150px 150px;opacity:var(--tile-op)"></div>
     <div class="lbn-hero-in">
@@ -88,7 +91,7 @@
 
   <section class="lbn-sec" id="rede" data-screen-label="A rede" style="background:var(--bg2);color:var(--fg)">
     <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:start">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px;align-items:start">
         <div>
           <div style="display:flex;gap:16px;font-family:Archivo,sans-serif;font-weight:600;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-text)"><span>01</span><span style="color:var(--fg)">A rede</span></div>
           <h2 style="margin:16px 0 0;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.02;letter-spacing:-0.025em;text-transform:uppercase;text-wrap:balance">Nascemos de um grupo de jovens negros do Nordeste</h2>
@@ -101,17 +104,17 @@
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--line)">
         <div class="lbn-card" style="background:var(--bg2);padding:32px 30px;display:flex;flex-direction:column;gap:16px">
-          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:24px;color:var(--accent)">01</div>
+          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:24px;color:var(--accent-text)">01</div>
           <div class="lbn-card-title" style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:20px;line-height:1.1;letter-spacing:-0.02em">Aproximamos você de quem já está lá</div>
           <div style="font-size:15px;line-height:1.55;color:var(--fg2)">Conversas diretas com profissionais negros que atuam em empresas, escritórios, órgãos públicos e negócios próprios.</div>
         </div>
         <div class="lbn-card" style="background:var(--bg2);padding:32px 30px;display:flex;flex-direction:column;gap:16px">
-          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:24px;color:var(--accent)">02</div>
+          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:24px;color:var(--accent-text)">02</div>
           <div class="lbn-card-title" style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:20px;line-height:1.1;letter-spacing:-0.02em">Levamos o Nordeste para a mesa nacional</div>
           <div style="font-size:15px;line-height:1.55;color:var(--fg2)">Estudantes daqui em contato com oportunidades de todo o Brasil, sem precisar sair da própria região para entender como acessar essas oportunidades.</div>
         </div>
         <div class="lbn-card" style="background:var(--bg2);padding:32px 30px;display:flex;flex-direction:column;gap:16px">
-          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:24px;color:var(--accent)">03</div>
+          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:24px;color:var(--accent-text)">03</div>
           <div class="lbn-card-title" style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 108;font-weight:800;font-size:20px;line-height:1.1;letter-spacing:-0.02em">Transformamos contato em oportunidade real</div>
           <div style="font-size:15px;line-height:1.55;color:var(--fg2)">Indicação, divulgação de vagas e relações que continuam depois que a conversa acaba.</div>
         </div>
@@ -340,11 +343,13 @@
       </div>
       <div class="lbn-form-wrap">
         <div class="lbn-tabs" role="tablist" aria-label="Tipo de apoio">
-          <button type="button" role="tab" id="tab-empresa" aria-controls="form-empresa" aria-selected="true" onclick="lbnTab('empresa')">Sou empresa e quero apoiar</button>
-          <button type="button" role="tab" id="tab-pessoa" aria-controls="form-pessoa" aria-selected="false" onclick="lbnTab('pessoa')">Sou pessoa física e quero fazer parte</button>
+          <button type="button" role="tab" id="tab-empresa" aria-controls="form-empresa" aria-selected="true" tabindex="0" data-support-tab="empresa">Sou empresa e quero apoiar</button>
+          <button type="button" role="tab" id="tab-pessoa" aria-controls="form-pessoa" aria-selected="false" tabindex="-1" data-support-tab="pessoa">Sou pessoa física e quero fazer parte</button>
         </div>
 
-        <form id="form-empresa" class="lbn-form" role="tabpanel" aria-labelledby="tab-empresa" novalidate>
+        <form id="form-empresa" class="lbn-form" role="tabpanel" aria-labelledby="tab-empresa" novalidate method="post">
+          <p data-form-unavailable role="status">O formulário está indisponível no momento. Recarregue a página ou entre em contato por <a href="mailto:libertosblacknetwork@gmail.com">e-mail</a>.</p>
+          <fieldset class="lbn-form-controls" data-form-controls disabled aria-label="Dados do formulário">
           <input type="hidden" name="tipo" value="empresa">
           <input type="text" name="site" class="lbn-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="lbn-grid2 lbn-grid4">
@@ -366,10 +371,13 @@
           <label class="lbn-field"><span>Mensagem</span><textarea name="mensagem" rows="3" maxlength="2000" placeholder="Conte um pouco sobre a sua empresa e o que vocês buscam."></textarea></label>
           <label class="lbn-check lbn-consent"><input type="checkbox" name="consentimento" value="sim" required><span>Autorizo a Libertos Black Network a usar estes dados para entrar em contato comigo. *</span></label>
           <button type="submit" class="lbn-btn lbn-submit">Quero apoiar</button>
+          </fieldset>
           <p class="lbn-status" role="status" aria-live="polite"></p>
         </form>
 
-        <form id="form-pessoa" class="lbn-form" role="tabpanel" aria-labelledby="tab-pessoa" novalidate hidden>
+        <form id="form-pessoa" class="lbn-form" role="tabpanel" aria-labelledby="tab-pessoa" novalidate hidden method="post">
+          <p data-form-unavailable role="status">O formulário está indisponível no momento. Recarregue a página ou entre em contato por <a href="mailto:libertosblacknetwork@gmail.com">e-mail</a>.</p>
+          <fieldset class="lbn-form-controls" data-form-controls disabled aria-label="Dados do formulário">
           <input type="hidden" name="tipo" value="pessoa">
           <input type="text" name="site" class="lbn-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="lbn-grid2">
@@ -396,11 +404,14 @@
           <label class="lbn-check lbn-consent"><input type="checkbox" name="consentimento" value="sim" required><span>Autorizo a Libertos Black Network a usar estes dados para entrar em contato comigo. *</span></label>
           <label class="lbn-check lbn-consent"><input type="checkbox" name="banco_talentos" value="sim"><span>Autorizo compartilhar meu perfil com empresas parceiras pelo Banco de Talentos.</span></label>
           <button type="submit" class="lbn-btn lbn-submit">Quero fazer parte</button>
+          </fieldset>
           <p class="lbn-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer class="lbn-footer" data-screen-label="Rodapé">
     <div class="lbn-foot-grid">
@@ -452,91 +463,9 @@
 
 </div>
 
-<script>
-(function(){
-  var KEY='lbn-site-theme';
-  // URL do app da web do Google Apps Script (SCRIPT/formulario-apoie.gs). Vazio = abre o e-mail como alternativa.
-  var FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbwR0TIvqx3XPloLgPd8pa8uFwXVHzonjw02roO92YIEu397mCWQcnEGztMf0Hr-P2KKTQ/exec';
-  var EMAIL='libertosblacknetwork@gmail.com';
-  function apply(t){
-    document.getElementById('lbn-root').setAttribute('data-lbn-theme',t);
-    document.documentElement.style.background = t==='dark' ? '#0A0A0A' : '#FFFFFF';
-  }
-  window.lbnToggleTheme=function(){
-    var cur=document.getElementById('lbn-root').getAttribute('data-lbn-theme');
-    var next=cur==='light'?'dark':'light';
-    apply(next);
-    try{localStorage.setItem(KEY,next);}catch(e){}
-  };
-  window.lbnTab=function(which){
-    ['empresa','pessoa'].forEach(function(k){
-      var on=k===which;
-      document.getElementById('tab-'+k).setAttribute('aria-selected',on?'true':'false');
-      document.getElementById('form-'+k).hidden=!on;
-    });
-  };
-  function summary(fd){
-    var lines=[];
-    fd.forEach(function(v,k){ if(k!=='site'&&v) lines.push(k+': '+v); });
-    return lines.join('\n');
-  }
-  Array.prototype.forEach.call(document.querySelectorAll('.lbn-form'),function(form){
-    var status=form.querySelector('.lbn-status');
-    var btn=form.querySelector('.lbn-submit');
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      status.className='lbn-status';
-      if(!form.checkValidity()){
-        var bad=form.querySelector(':invalid');
-        status.textContent='Confira os campos obrigatórios marcados com *.';
-        status.classList.add('is-error');
-        if(bad) bad.focus();
-        return;
-      }
-      var fd=new FormData(form);
-      if(fd.get('site')) return;
-      if(!FORM_ENDPOINT){
-        var assunto=fd.get('tipo')==='empresa'?'Quero apoiar a Libertos Black Network':'Quero fazer parte da Libertos Black Network';
-        window.location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent(assunto)+'&body='+encodeURIComponent(summary(fd));
-        return;
-      }
-      btn.disabled=true; status.textContent='Enviando...';
-      fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams(fd)})
-        .then(function(){
-          form.reset();
-          status.textContent='Recebemos o seu contato. Obrigado! Respondemos em breve.';
-          status.classList.add('is-ok');
-        })
-        .catch(function(){
-          status.textContent='Não conseguimos enviar agora. Tente de novo ou escreva para '+EMAIL+'.';
-          status.classList.add('is-error');
-        })
-        .then(function(){ btn.disabled=false; });
-    });
-  });
-  // Blocos surgem ao entrar na tela
-  (function(){
-    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduce||!('IntersectionObserver' in window)) return;
-    var targets=[];
-    Array.prototype.forEach.call(document.querySelectorAll('.lbn-sec > div > *'),function(el){
-      if(getComputedStyle(el).position==='absolute') return;
-      var items=el.querySelectorAll(':scope > .lbn-card, :scope > .lbn-offer');
-      if(items.length){
-        Array.prototype.forEach.call(el.children,function(c,i){ c.style.transitionDelay=(i*90)+'ms'; targets.push(c); });
-      } else targets.push(el);
-    });
-    document.documentElement.classList.add('lbn-js');
-    targets.forEach(function(el){ el.classList.add('lbn-reveal'); });
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if(en.isIntersecting){ var t=en.target; t.classList.add('is-in'); io.unobserve(t); setTimeout(function(){ t.style.transitionDelay=''; },1200); } });
-    },{rootMargin:'0px 0px -8% 0px',threshold:0.12});
-    targets.forEach(function(el){ io.observe(el); });
-  })();
-  var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
-  apply(saved==='dark'?'dark':'light');
-})();
-</script>
+<script src="/SCRIPT/form-validation.js" defer></script>
+<script src="/SCRIPT/site.js" defer></script>
+<script src="/SCRIPT/home.js" defer></script>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#0A0A0A"/><circle cx="100" cy="100" r="34" fill="none" stroke="#FF4B0F" stroke-width="16"/><circle cx="100" cy="100" r="8" fill="#FF4B0F"/><g fill="#FF4B0F"><rect x="93" y="26" width="14" height="26"/><rect x="93" y="148" width="14" height="26"/><rect x="26" y="93" width="26" height="14"/><rect x="148" y="93" width="26" height="14"/></g></svg></template>
 </body>
 </html>
